@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de tareas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px 0 0 5px;
+            border: none;
+        }
+
+        button[type="submit"] {
+            padding: 10px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        li input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        li button[type="button"] {
+            margin-left: auto;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de tareas</h1>
+    <form>
+        <input type="text" id="notaNueva" placeholder="Agregar tarea">
+        <button type="submit" id="añadir">Agregar</button>
+    </form>
+    <ul id="listaNota">
+        <!-- Lista de tareas se agregará aquí -->
+    </ul>
+
+    <script>
+        const notaLista = document.getElementById('listaNota');
+        const notaNueva = document.getElementById('notaNueva');
+        const añadir = document.getElementById('añadir');
+
+        function addTask(e) {
+            event.preventDefault();
+            const taskText = notaNueva.value;
+            if (taskText) {
+                const lis = document.createElement('li');
+                const check = document.createElement('input');
+                check.type = 'checkbox';
+                const spamer = document.createElement('span');
+                spamer.textContent = taskText;
+                const deleteButton = document.createElement('button');
+                deleteButton.type = 'button';
+                deleteButton.textContent = 'Eliminar';
+                lis.appendChild(check);
+                lis.appendChild(spamer);
+                lis.appendChild(deleteButton);
+                notaLista.appendChild(lis);
+                notaNueva.value = '';
+            }
+        }
+
+        function deleteTask(event) {
+            
+            if (event.target.tagName === 'BUTTON') {
+                const lis = event.target.parentElement;
+                notaLista.removeChild(lis);
+            }
+        }
+
+        añadir.addEventListener('click', addTask);
+        notaLista.addEventListener('click', deleteTask);
+    </script>
+</body>
+</html>

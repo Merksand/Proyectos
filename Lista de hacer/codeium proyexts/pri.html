@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lista de tareas</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <style>
+        body {
+	font-family: Arial, sans-serif;
+}
+
+h1 {
+	text-align: center;
+}
+
+#input-task {
+	padding: 10px;
+	margin-right: 10px;
+	border-radius: 5px;
+	border: none;
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+#btn-add {
+	padding: 10px;
+	border-radius: 5px;
+	border: none;
+	background-color: #4CAF50;
+	color: white;
+	cursor: pointer;
+}
+
+#task-list {
+	margin-top: 20px;
+	list-style: none;
+}
+
+.task-item {
+	padding: 10px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.task-item .task-name {
+	flex: 1;
+	margin-right: 10px;
+}
+
+.task-item .btn-delete {
+	padding: 5px;
+	border-radius: 5px;
+	border: none;
+	background-color: #f44336;
+	color: white;
+	cursor: pointer;
+}
+    </style>
+	<h1>Lista de tareas</h1>
+	<input type="text" id="input-task" placeholder="Agregar tarea...">
+	<button id="btn-add">Agregar</button>
+	<ul id="task-list">
+		<!-- Aquí se agregarán las tareas con JavaScript -->
+	</ul>
+	<script >// Obtener elementos del DOM
+        const inputTask = document.getElementById('input-task');
+        const btnAdd = document.getElementById('btn-add');
+        const taskList = document.getElementById('task-list');
+        
+        // Agregar evento al botón "Agregar"
+        btnAdd.addEventListener('click', () => {
+            // Obtener el valor del input
+            const taskName = inputTask.value;
+            // Crear un nuevo elemento de lista
+            const taskItem = document.createElement('li');
+            taskItem.classList.add('task-item');
+            // Crear un span para el nombre de la tarea
+            const taskNameSpan = document.createElement('span');
+            taskNameSpan.classList.add('task-name');
+            taskNameSpan.textContent = taskName;
+            // Crear un botón para eliminar la tarea
+            const btnDelete = document.createElement('button');
+            btnDelete.classList.add('btn-delete');
+            btnDelete.textContent = 'Eliminar';
+            btnDelete.addEventListener('click', () => {
+                taskItem.remove();
+            });
+            // Agregar el span y el botón al elemento de lista
+            taskItem.appendChild(taskNameSpan);
+            taskItem.appendChild(btnDelete);
+            // Agregar el elemento de lista a la lista de tareas
+            taskList.appendChild(taskItem);
+            // Limpiar el input
+            inputTask.value = '';
+        });
+        </script>
+</body>
+</html>

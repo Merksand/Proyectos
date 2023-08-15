@@ -1,0 +1,70 @@
+body{
+    /* height: 100vh; */
+    background: #3b2f2f;
+    /* display: flex;
+    align-items: center; */
+}
+.content{
+    width: 90vh;
+    height: 50vh;
+    /* background: linear-gradient(#b7d6c7, transparent) #ffe2d1; */
+    background: linear-gradient(#a1c9e4,#e7e7e7);
+    margin: 100px auto ;
+    position: relative;
+}
+.suelo{
+    background-image: url(img/suelo.png);
+    background-repeat: no-repeat;
+    width: 130%;
+    height: 40px;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    /* background-size: 50% 42px; */
+}
+.nube{
+    background: url(img/nube.png) no-repeat;
+    width: 10px;
+    height: 10px;
+}
+.dino {
+    background: url(img/dino.png) no-repeat;
+    width: 88px;
+    height:88px;
+    position: absolute;
+    bottom: 22px;
+    transition: 0.4s;
+    
+}
+.dino-corriendo {
+    animation: animarDino 0.25s steps(2) infinite  ;
+}
+/* .dino-estrellado {
+    background-position-x: -252px;
+} */
+
+@keyframes animarDino{
+    from{
+        background-position-x: -84px;
+    }
+    to{
+        background-position-x: -252px;
+    }
+}
+
+/*
+.dino {
+    width: 84px;
+    height: 84px;
+
+    position: absolute;
+    bottom: 22px;
+    left: 42px;
+    z-index: 2;
+
+    background: url(img/dino.png) repeat-x 0px 0px;
+    background-size: 336px 84px;
+    background-position-x: 0px;
+
+}
+*/

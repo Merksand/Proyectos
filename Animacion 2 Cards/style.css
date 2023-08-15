@@ -1,0 +1,157 @@
+.content{
+  width: 21rem;
+  position: relative;
+  margin: 20px auto;
+  display: flex;
+  transition: 1s;
+  border-radius: 10px;
+}
+.portada{
+  width: 21rem;
+  border-radius: 10px;
+  position: relative;
+  transition: 1s;
+}
+.personaje{
+  width: 25rem;
+  position: absolute;
+  left: 0px;
+  bottom: 10px;
+  filter: drop-shadow(0px 0px 30px #000);
+  opacity: 0;
+  z-index: 1;
+  transition: 1s;
+}
+.content:hover .portada,.content:hover::before {
+  transform: perspective(850px) rotateX(30deg) ;
+  box-shadow: 0px 30px 30px #000;
+  opacity: 1;
+
+}
+.content::before{
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(transparent, #000);
+  position: absolute;
+  z-index: 1;
+  border-radius: 10px;
+  opacity: 0;
+  transition: 1s;
+}
+.content:hover .personaje{
+  opacity: 1;
+  transform: translateY(-30px) ;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .content {
+  width: 20rem;
+   display: grid;
+  position: relative;
+  margin: 50px auto;
+  transition: 1s;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+.portada {
+  width: 100%;
+  border-radius: 10px;
+  transition: 1s;
+}
+.personaje {
+  position: absolute;
+  width: 22rem;
+  bottom: 20px;
+  left: 0px;
+  opacity: 0;
+  transition: 1s;
+  filter: drop-shadow(0px 0px 100px #000);
+}
+.content:hover {
+  transform: perspective(800px) rotateX(20deg);
+  box-shadow: 0px 50px 30px #000;
+}
+.content::before{
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  width:100%;
+  height: 100%;
+  background-image:linear-gradient( transparent 10%, #0005, #0009);
+  opacity: 0;
+  transition:1s;
+  z-index: 1;
+  border-radius:10px;
+}
+.content:hover::before{
+  opacity: 1;
+}
+.content:hover .personaje{
+  opacity: 1;
+  transform: translateY(-50px);
+} */
+
+
+
+
+
+/* .content{
+  width: 20rem;
+  height: 30rem;
+  position: relative;
+  margin: 40px auto;
+}
+.portada{
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 10px;
+  transition: 1s;
+}
+.personaje{
+  width: 18rem;
+  height: 24rem;
+  position: absolute;
+  bottom: -10px;
+  left: 15px;
+  filter: drop-shadow(10px 10px 70px #131313);
+  opacity: 0;
+  transition: 1s;
+}
+.content:hover .portada{
+  transform: perspective(800px) rotateX(25deg);
+  box-shadow: 0px 30px 40px #000;
+}
+.content:hover .personaje{
+  opacity: 1;
+  transform: translateY(-25px) ;
+} */

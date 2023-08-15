@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Novia.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      body {
+        background: rgb(198, 34, 182);
+      }
+      .recha {
+        position: absolute;
+      }
+    </style>
+    <input
+      type="button"
+      value="SI"
+      onclick="alert('AHORA SERAS MI NOVIA POR SIEMPRE Y PARA SIEMPRE 🎉♥')"
+    />
+    <input type="button" value="NO" class="recha" />
+
+    <!--  <input class="prueba" type="button" value="TOCAME MIAAAAA"> -->
+    <script>
+      /* const boton = document.querySelector(".prueba"); */
+let rechazo = document.querySelector('.recha')
+/* boton.addEventListener("click",()=>{
+    alert("Perraaa")
+}) */
+
+rechazo.addEventListener("mouseover",()=>{
+    let x = Math.floor(Math.random()*900);
+    let y = Math.floor(Math.random()*500);
+    rechazo.style.marginLeft=x+"px"
+    rechazo.style.marginTop=y+"px"
+    
+})
+
+
+
+
+
+    </script>
+  </body>
+</html>

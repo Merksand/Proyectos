@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Juego de adivinanza de números</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px 0 0 5px;
+            border: none;
+            flex: 1;
+        }
+
+        button[type="submit"] {
+            padding: 10px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+
+        p {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Juego de adivinanza de números</h1>
+    <form id="guess-form">
+        <input type="number" id="guess-input" placeholder="Ingrese un número">
+        <button type="submit">Adivinar</button>
+    </form>
+    <p id="result"></p>
+
+    <script>
+        const guessForm = document.getElementById('guess-form');
+        const guessInput = document.getElementById('guess-input');
+        const resultParagraph = document.getElementById('result');
+        let randomNumber = Math.floor(Math.random() * 100) + 1;
+        let tries = 0;
+
+        function checkGuess(event) {
+            event.preventDefault();
+            const guess = Number(guessInput.value);
+            if (guess === randomNumber) {
+                resultParagraph.textContent = `¡Felicitaciones! Adivinaste el número en ${tries} intentos.`;
+                guessInput.disabled = true;
+            } else if (guess > randomNumber) {
+                resultParagraph.textContent = 'El número es menor.';
+                tries++;
+            } else {
+                resultParagraph.textContent = 'El número es mayor.';
+                tries++;
+            }
+            guessInput.value = '';
+            guessInput.focus();
+        }
+
+        guessForm.addEventListener('submit', checkGuess);
+    </script>
+</body>
+</html>
