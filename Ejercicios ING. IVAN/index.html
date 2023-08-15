@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>ARITMETICA</h2>
+    <p >Primer numero: <input type="text" class="num1"/></p>
+    <p >Segundo numero: <input type="text" class="num2" /></p>
+    <select name="" class="op">
+      <option value="1">Suma</option>
+      <option value="2">Resta</option>
+      <option value="3">Multiplicacion</option>
+      <option value="4">Division</option>
+    </select>
+    <button class="btn">calcular</button>
+    <p class="res"></p>
+    <p class="time"></p>
+
+    <script>
+        let num = 1
+        i=0
+        
+        // while(i < 10){
+        //     alert(i);
+        //     i++
+        // }
+        let se = setInterval((e)=>{
+            i++
+            if(i == e){
+                // clearInterval(se)
+            }
+            res.innerHTML+=i+" "
+        },1000)
+        //para calcular la suma de los n numeros introducidos por el usuario4
+
+        let res = document.querySelector(".time");
+      let calcular = document.querySelector(".btn");
+      let resultado = document.querySelector(".res");
+      
+      calcular.addEventListener("click", (e) => {
+        let n1 = parseInt(document.querySelector(".num1").value);
+      let n2 = parseInt(document.querySelector(".num2").value);
+        let op = parseInt(document.querySelector(".op").value);
+        console.log(op);
+        console.log(n1);
+        console.log(n2);
+        console.log(e.target.parentElement);
+        switch (op) {
+          case 1:
+            resultado.innerHTML = n1 + n2;
+            break;
+          case 2:
+            resultado.innerHTMLL = n1 - n2;
+            break;
+          case 3:
+            resultado.innerHTML = n1 * n2;
+            break;
+          case 4:
+            resultado.innerHTMLL = n1 / n2;
+            break;
+          default:
+            alert("---");
+          //resultado.innerHTML = "------";
+        }
+      });
+      e = parseInt(prompt())
+        s = 0
+        for (let i = 0; i < e; i++) {
+            a = parseInt(prompt("Ingrese un numero"))
+            s += a
+        }
+        alert(s)
+    </script>
+  </body>
+</html>
