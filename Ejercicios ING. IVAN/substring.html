@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <style></style>
+
+    <h2></h2>
+    <p>Ingrese la cadena: <input type="text" class="inp1" /></p>
+    <p>Ingrese la posicion de inicio: <input type="text" class="inpRes1" /><br /></p>
+    <p>Ingrese la posicion final: <input type="text" class="inpRes2" /><br /></p>
+    <p>Subcadena: <input type="text" class="inpRes3" /><br /></p>
+    <button class="btn">Click</button>
+
+    <p class="res1"></p>
+    <p class="res2"></p>
+
+    <script>
+      let res1 = document.querySelector(".res1");
+      let res2 = document.querySelector(".res2");
+      
+      let boton = document.querySelector(".btn");
+      //   let e = parseInt(prompt())
+      boton.addEventListener("click", (e) => {
+        let inpRes1 = parseInt(document.querySelector(".inpRes1").value)
+      let inpRes2 = parseInt(document.querySelector(".inpRes2").value)
+      let inpRes3 = document.querySelector(".inpRes3");
+        let inp1 = document.querySelector(".inp1").value;
+   
+        console.log(inp1);
+      
+        console.log(inp1.substring(inpRes1-1,inpRes2));
+        inpRes3.value = inp1.substring(inpRes1-1,inpRes2)
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <style></style>
+
+    <h2></h2>
+    <p>INGRESE  :     <input type="text" class="inp1" />   <input type="text" class="inpRes2" /></p>
+    <p>RESULTADO: <input type="text" class="inpRes1" />   <input type="text" class="inpRes3" /></p>
+
+    <button class="btn">Click</button>
+
+    <p class="res1"></p>
+    <p class="res2"></p>
+
+    <script>
+      let res1 = document.querySelector(".res1");
+      let res2 = document.querySelector(".res2");
+      let inpRes1 = document.querySelector(".inpRes1");
+      let inpRes2 = document.querySelector(".inpRes2");
+      let inpRes3 = document.querySelector(".inpRes3");
+      let boton = document.querySelector(".btn");
+      //   let e = parseInt(prompt())
+      boton.addEventListener("click", (e) => {
+        let inp1 = document.querySelector(".inp1").value;
+        // let inp2 = document.querySelector(".inp2").value;
+        // console.log(inp1);
+        // console.log(inp2.length);
+        inpRes1.value = inp1.trim()
+        inpRes2.value = inp1.length
+        inpRes3.value = inpRes1.value.length
+        // res1.innerHTML = inp1;
+        // res2.innerHTML = inp2.length;
+
+      });
+    </script>
+  </body>
+</html>
