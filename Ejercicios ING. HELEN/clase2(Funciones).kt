@@ -1,15 +1,16 @@
  var age3:Int = 20
  fun main() {
-     
- //variableNumerica(30,15)
- //println("-------------------------------")
- //variableNumerica(14,2)
  
  variableNumerica()
  println("-------------------------------")
  println("-------------------------------")
  variableAlfanumericas()
- 
+ mostrarEdad(20)
+ mostrarNombre("Miguel")
+ sumar(5,5)
+ restar(10,5)
+ multiplicar(5,5)
+ dividir(15,2)
 }
  
 fun variableNumerica(){
@@ -61,5 +62,27 @@ fun variableAlfanumericas(){
 fun variablesBooleanas(){
     val boolean1:Boolean = true
     val boolean2:Boolean = false
+}
+
+fun mostrarEdad(edadActual:Int){
+    println("Tengo $edadActual años")
+    
+}
+fun mostrarNombre(nombre:String){
+    println("Mi nombre es $nombre")
+    
+}
+
+fun sumar(a:Int , b:Int){
+    println("El resultado es ${a + b}")
+}
+fun restar(a:Int , b:Int){
+    println("El resultado es ${a - b}")
+}
+fun multiplicar(a:Int , b:Int){
+    println("El resultado es ${a * b}")
+}
+fun dividir(a:Int , b:Int){
+    println("El resultado es ${a / b}")
 }
 
