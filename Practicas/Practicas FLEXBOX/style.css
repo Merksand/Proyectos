@@ -1,0 +1,192 @@
+body {
+    background: #0003;
+}
+
+.content {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100px;
+    border: 5px solid #aa7;
+    display: flex;
+    /* flex-direction: row row-reverse column column-reverse; */
+    /* flex-wrap: wrap; */
+    gap: 10px;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.caja {
+    width: 170px;
+    height: 70px;
+    transition: 1s;
+}
+
+.caja:hover {
+    flex-grow: 1;
+}
+
+.caja1 {
+    /* flex-grow: 1; */
+    background: rgb(182, 11, 11);
+}
+
+.caja2 {
+    background: rgb(45, 136, 64);
+}
+
+.caja3 {
+    background: rgb(91, 33, 228);
+    /* flex-grow: 4; */
+}
+
+.caja4 {
+    flex-shrink: 3;
+    /* Proporcion para encogerse */
+    background: rgb(209, 0, 129);
+}
+
+
+
+
+
+
+
+
+.content1a {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100px;
+    border: 5px solid #aa7;
+    display: flex;
+    gap: 10px;
+}
+
+
+.caja1a {
+    /* flex-grow: 1; */
+    background: rgb(116, 33, 33);
+}
+
+.caja2a {
+    background: rgb(45, 136, 64);
+}
+
+.caja3a {
+    background: rgb(91, 33, 228);
+    /* flex-grow: 4; */
+    flex-shrink: 4;
+}
+
+.caja4a {
+    /* flex-shrink: 6; */
+    flex-basis: 10px;
+    /* La propiedad flex-basis se utiliza para establecer el tamaño inicial de un elemento flexible antes de que se distribuyan los espacios flexibles. Como el min-widt y max-width pero mas flexible.  si el espacio disponible es mayor que la suma de los tamaños iniciales de los elementos, el espacio sobrante se distribuirá entre los elementos según sus propiedades flex-grow*/
+
+    background: rgb(209, 0, 129);
+}
+
+
+
+
+
+
+
+
+
+
+
+.content1b {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100px;
+    border: 5px solid #aa7;
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.basis {
+    min-width: 500px;
+    /* La  */
+}
+
+.caja1b {
+    background: rgb(116, 33, 33);
+}
+
+.caja2b {
+    background: rgb(45, 136, 64);
+}
+
+.caja3b {
+    background: rgb(91, 33, 228);
+}
+
+.caja4b {
+    background: rgb(209, 0, 129);
+}
+
+
+
+
+
+
+
+.content1c {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100px;
+    border: 5px solid #aa7;
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.self {
+    width: 300px;
+    flex-grow: 1;
+}
+
+.caja1c {
+    background: rgb(116, 33, 33);
+    align-self: center;
+    /* Permite Mover el elemento en solitario y no en grupo */
+}
+
+.caja2c {
+    background: rgb(45, 136, 64);
+    align-self: end;
+
+}
+
+.caja3c {
+    background: rgb(91, 33, 228);
+    align-self: stretch;
+    align-self: center;
+}
+
+.caja4c {
+    background: rgb(209, 0, 129);
+    align-self: stretch;
+}
+
+
+/*flex-shrink Proporcion para encogerse */
+/*flex-basis para establecer el tamaño inicial*/
+/* Flex : flex-grow flex-shrink flex-basis; */
+/* flex:      0           1        auto ;  El por defector*/
+
+
+.gallery {
+    display: flex;
+    gap: 3px;
+}
+.card {
+    flex: 1;
+    flex-basis: 100px;
+}
+img {
+    width: 100%;
+    height: auto;
+}

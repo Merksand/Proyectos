@@ -1,0 +1,61 @@
+body{
+    background: #644;
+}
+.contenedor{
+    background: #fff;  
+    width: 500px;
+    height: 600px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(5,1fr);
+    grid-template-areas: 
+    "n1 n1 n1"
+    "n2 n3 n4"
+    "n2 n3 n4"
+    "n5 n5 n4"
+    "n6 n6 n4"
+    ;
+    gap: 10px;
+    padding: 10px;
+}
+
+div .dildo{
+    color: #fff;
+    text-align: center;
+    line-height: normal;
+   
+}
+div .dildo:hover{
+    border: 8px solid #fff;
+    
+}
+
+.uno{
+    background: rgb(175, 32, 54);
+      grid-area:n1;
+}
+.dos{
+    background: rgb(113, 150, 151);
+    grid-area: n2;
+}
+.tres{
+    background: rgb(194, 225, 18);
+    grid-area: n3;
+}
+.cuatro{
+    background: rgb(23, 174, 9);
+    grid-area: n4;
+}
+.cinco{
+    background: rgb(70, 69, 70);
+    grid-area: n5;
+}
+.seis{
+    background: rgb(177, 116, 24);
+    grid-area:n6;
+}
+.siete{
+    background: rgb(162, 25, 162);
+    grid-area: ;
+}

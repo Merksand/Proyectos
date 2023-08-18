@@ -1,0 +1,73 @@
+body{
+    padding: 15px;
+    margin: 0px;
+    outline: none;
+}
+.content{
+    /* background: #732; */
+    border: 3px solid #000;
+    display: grid;
+    /* width:500px; */
+    height: 93vh;
+    grid-template-columns:repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    justify-items:center; 
+    align-items:center; /* afecta a uno por uno o sea que puede mover a todos por igual a lo vertical */
+    place-items: ;/* Shorjan de los anteriores */
+    justify-content :;/* A lo horizontal - */
+    align-content:;
+    place-content: ;/* Shorjan de los anteriores */
+    grid-auto-flow:;/*afecta a todas las cajas verticales o sea que las puede unir en uno a lo vertical| */
+    grid-template-areas:;
+    grid-auto-flow: ; 
+}
+.caja{
+    background: rgb(213, 118, 23);
+    /* border: 1px solid #000000; */
+    padding: 50px;
+    font-size: 30px;
+    /* width:50px;
+    height: 50px; */
+}
+ .caja:nth-child(1){
+    background: #ffcc00;
+    /* align-self:start  ; *//*Este y el otro es solo para items y no para el contenedor */
+    /* justify-self: start; */
+    place-self:start ;    /* Shorjan de los 2 anteriores */
+
+} 
+.caja:nth-child(2){
+   background: rgb(255, 0, 43);
+ 
+}
+.caja:nth-child(3){
+    background: rgb(0, 128, 255);
+    place-self: start end;
+}
+.caja:nth-child(4){
+    background: rgb(13, 255, 0);
+    
+} 
+.caja:nth-child(5){
+    background: rgb(0, 255, 234);
+    
+} 
+.caja:nth-child(6){
+    background: rgb(255, 0, 208);
+    
+} 
+.caja:nth-child(7){
+    background: rgb(154, 184, 153);
+    place-self:end start;
+    
+} 
+.caja:nth-child(8){
+    background: rgb(31, 19, 95);
+    order: 2;
+    place-self: end;
+} 
+.caja:nth-child(9){
+    background: rgb(202, 255, 44);
+   
+    order: 1;
+} 

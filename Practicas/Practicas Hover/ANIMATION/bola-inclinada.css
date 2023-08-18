@@ -1,0 +1,67 @@
+body{
+    animation: fondo 6s linear infinite ;
+}
+@keyframes fondo {
+    0%{
+        background: red;
+    }
+    25%{
+        background: #ff497f;
+    }
+    50%{
+        background: #82f;
+    }
+    75%{
+        background: #3a5;
+    }
+    100%{
+        background: #f45;
+    }
+}
+.content{
+    width:  400px;
+    height: 400px;
+    border: 5px solid #fff;
+    margin: 100px auto;
+    position: relative;
+}
+.bola{
+    width: 100px;
+    height: 100px;
+    background: #345df8;
+    border-radius: ;
+    position: absolute;
+    animation: bola 4s linear infinite   ;
+    /* animation-direction: alternate-reverse; */
+    /* transform: translate(0px); */
+}
+@keyframes bola {
+    
+    0%{
+        transform: translate(150px);
+    }
+    25%{
+        transform: translate(300px,150px);
+    }
+    50%{
+        transform: translate(150px,300px);
+    }
+    75%{
+        transform: translate(0px, 150px);
+    }
+    100%{
+        transform: translate(150px);
+    }
+    
+}
+input{
+    width: 100px;
+}
+#num{
+    text-decoration: none;
+    user-select: none;
+    border: none;
+    background: #000;
+    color:#fff;
+
+}

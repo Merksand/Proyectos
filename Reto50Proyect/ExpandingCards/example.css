@@ -9,7 +9,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 100vh;/* Importante para las alineaciones  */
   overflow: hidden;
   margin: 0;
 }
@@ -22,8 +22,8 @@ body {
 .panel {
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  height: 80vh;
+  /* background-repeat: no-repeat; */
+  height: 90vh;/* Toma referencia a la pantalla del navegador y no del padre */
   border-radius: 50px;
   color: #fff;
   cursor: pointer;

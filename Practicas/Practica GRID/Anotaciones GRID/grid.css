@@ -1,0 +1,42 @@
+body{
+    background: rgb(255, 153, 204);
+ 
+}
+
+.content{
+    /* height: 550px;
+    border:2px solid #743; */
+    margin: auto;
+    border: 5px solid #000;
+    background: #282121;
+    display: grid;
+    grid-template-columns:repeat(3, 1fr );
+    grid-template-rows:repeat(4,150px);
+    /* row-gap: 20px;
+    column-gap: 20px;
+    grid-gap: ; */
+    gap:30px;
+    grid-auto-rows: 250px;/*Para las celdas que se crean de la nada*/
+    grid-auto-columns: 150px;/*Para las celdas que se crean de la nada pero cambiada con grid-auto-flow: column;*/
+    /* grid-auto-flow: column; *//*Se comporta como columna que es el reverso de su or defecto */
+    grid-auto-flow: dense;/* Para rellenar celdas vacias menos la ultimaa obvio*/
+    
+
+   
+}
+.caja{
+    /* width: 50px;
+    height:50px; */
+    border: 2px solid #000;
+    text-align: center;
+    background: rgb(158, 143, 143);
+}
+.caja:nth-child(1){
+    grid-column: ;
+    grid-row: span 1;
+    background: red;
+}.caja:nth-child(2){
+    background: yellow;
+    /* grid-column:3/5;
+    grid-row:1/3; */
+}
