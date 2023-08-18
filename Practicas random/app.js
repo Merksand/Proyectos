@@ -7,14 +7,14 @@ ref.addEventListener("submit", (e) => {
   if (addNota.value) {
     let salida = e.target.children[0].value;
     let nuevo = document.createElement("li");
+    nuevo.classList.add("lis")
     nuevo.innerHTML =
-      "<li class='lis'>" +
+    "<input type='checkbox'/>"+
       "<span>" +
       salida +
       "</span>" +
       "<button class='eliminar'>" +"Eliminar"+
-      "</button>" +
-      "</li>";
+      "</button>" 
     console.log();
     lista.appendChild(nuevo);
     addNota.value = "";
