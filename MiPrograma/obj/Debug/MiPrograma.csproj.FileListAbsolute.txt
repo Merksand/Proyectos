@@ -1,0 +1,22 @@
+C:\Users\USUARIO\AppData\Local\Temporary Projects\MiPrograma\bin\Debug\MiPrograma.exe.config
+C:\Users\USUARIO\AppData\Local\Temporary Projects\MiPrograma\bin\Debug\MiPrograma.exe
+C:\Users\USUARIO\AppData\Local\Temporary Projects\MiPrograma\bin\Debug\MiPrograma.pdb
+C:\Users\USUARIO\AppData\Local\Temporary Projects\MiPrograma\obj\Debug\MiPrograma.csprojResolveAssemblyReference.cache
+C:\Users\USUARIO\AppData\Local\Temporary Projects\MiPrograma\obj\Debug\MiPrograma.Form1.resources
+C:\Users\USUARIO\AppData\Local\Temporary Projects\MiPrograma\obj\Debug\MiPrograma.Properties.Resources.resources
+C:\Users\USUARIO\AppData\Local\Temporary Projects\MiPrograma\obj\Debug\MiPrograma.csproj.GenerateResource.Cache
+C:\Users\USUARIO\AppData\Local\Temporary Projects\MiPrograma\obj\Debug\MiPrograma.exe
+C:\Users\USUARIO\AppData\Local\Temporary Projects\MiPrograma\obj\Debug\MiPrograma.pdb
+C:\Users\USUARIO\AppData\Local\Temporary Projects\MiPrograma\obj\Debug\MiPrograma.MiPrograma2.resources
+C:\Users\USUARIO\Documents\Visual Studio 2012\Projects\MiPrograma\MiPrograma\bin\Debug\MiPrograma.exe.config
+C:\Users\USUARIO\Documents\Visual Studio 2012\Projects\MiPrograma\MiPrograma\obj\Debug\MiPrograma.exe
+C:\Users\USUARIO\Documents\Visual Studio 2012\Projects\MiPrograma\MiPrograma\obj\Debug\MiPrograma.pdb
+C:\Users\USUARIO\Documents\Visual Studio 2012\Projects\MiPrograma\MiPrograma\bin\Debug\MiPrograma.exe
+C:\Users\USUARIO\Documents\Visual Studio 2012\Projects\MiPrograma\MiPrograma\bin\Debug\MiPrograma.pdb
+C:\Users\USUARIO\Documents\Visual Studio 2012\Projects\MiPrograma\MiPrograma\obj\Debug\MiPrograma.csprojResolveAssemblyReference.cache
+C:\Users\USUARIO\Documents\Visual Studio 2012\Projects\MiPrograma\MiPrograma\obj\Debug\MiPrograma.Form1.resources
+C:\Users\USUARIO\Documents\Visual Studio 2012\Projects\MiPrograma\MiPrograma\obj\Debug\MiPrograma.Properties.Resources.resources
+C:\Users\USUARIO\Documents\Visual Studio 2012\Projects\MiPrograma\MiPrograma\obj\Debug\MiPrograma.MiPrograma2.resources
+C:\Users\USUARIO\Documents\Visual Studio 2012\Projects\MiPrograma\MiPrograma\obj\Debug\MiPrograma.csproj.GenerateResource.Cache
+C:\Users\USUARIO\Documents\Visual Studio 2012\Projects\MiPrograma\MiPrograma\obj\Debug\MiPrograma.SumaN.resources
+C:\Users\USUARIO\Documents\Visual Studio 2012\Projects\MiPrograma\MiPrograma\obj\Debug\MiPrograma.Calculadora.resources
