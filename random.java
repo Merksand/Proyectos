@@ -4,10 +4,6 @@ public class pp {
     public static int Max = 20;
     public static int[] Vector = new int[Max];
     public static int CantElem;
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         // TODO code application logic here
         int Opcion = 1;
@@ -20,14 +16,6 @@ public class pp {
             System.out.println("2.- Buscar Un elemento");
             System.out.println("3.- Listar todos los elementos");
             System.out.println("4.- Encontrar el elemento Mayor y Menor");
-            System.out.println("5.- Encontrar los multiplos de un Nro. almacenado en el Vector");
-            System.out.println("6.- Ordenar el Vector Metodo Burbuja");
-            System.out.println("7.- Factorial de cada elemento del Vector");
-            System.out.println("8.- Encontrar la Moda de un Vector");
-            System.out.println("9.- Listar un Vector ascendente y descendente");
-            System.out.println("10.- Invertir un Vector");
-            System.out.println("11.- Llenar en vector con serie Fibonacci");
-            System.out.println("12.- Ordenar por desplazamiento e insersión");
             System.out.println("--------------------------------");
             System.out.println("0.- Salir del Programa");
             System.out.println("-------------------------------");
@@ -46,7 +34,6 @@ public class pp {
                 CargarElementosVector(Cantidad);
 
             }
-
             if (Opcion == 2) {
                 System.out.println("Mostrar elemento");
             }
@@ -62,17 +49,8 @@ public class pp {
                 System.out.println("****************");
                 ElementoMayorMenorVector();
             }
-            if (Opcion == 5) {
-                System.out.println("****************");
-                System.out.println("Multiplos de un número");
-                System.out.println("****************");
-                MultiplosDeUnNro();
-            }
-
         }
-
     }
-
     static void CargarElementosVector(int Cant) {
         int i = 0;
         int ele;
@@ -84,7 +62,6 @@ public class pp {
             CantElem++;
         }
     }
-
     static void ListarElementosVector() {
         int i = 0;
         while (i < CantElem) {
@@ -92,7 +69,6 @@ public class pp {
             i++;
         }
     }
-
     static void ElementoMayorMenorVector() {
         int i = 0;
         int May = Vector[0];
@@ -111,12 +87,3 @@ public class pp {
         System.out.println("Elemento Menor es: " + Men);
         System.out.println("*********************");
     }
-    static void MultiplosDeUnNro(){
-        
-    }
-
-}
-
-
-
-
