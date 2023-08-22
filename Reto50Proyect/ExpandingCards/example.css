@@ -51,7 +51,7 @@ body {
   transition: opacity 0.3s ease-in 0.4s;
 }
 
-/* @media (max-width: 480px) {
+@media (max-width: 480px) {
   .container {
     width: 100vw;
   } 
@@ -60,4 +60,4 @@ body {
   .panel:nth-of-type(5) {
     display: none;
   }
-}*/
+}
