@@ -9,9 +9,8 @@ public class pp {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
         int Opcion = 1;
-        int Cantidad;
+        int Multiplo, Cantidad;
         while (Opcion != 0) {
             System.out.println(" -------------------");
             System.out.println("    Menu principal");
@@ -66,7 +65,8 @@ public class pp {
                 System.out.println("****************");
                 System.out.println("Multiplos de un número");
                 System.out.println("****************");
-                MultiplosDeUnNro();
+                Multiplo = Teclado.nextInt();
+                MultiplosDeUnNro(Multiplo);
             }
 
         }
@@ -111,7 +111,26 @@ public class pp {
         System.out.println("Elemento Menor es: " + Men);
         System.out.println("*********************");
     }
-    static void MultiplosDeUnNro(){
+    static void MultiplosDeUnNro(int prmNro) {
+        int i = 0;
+        while (i < CantElem) {
+            if (esMultiplo(Vector[i],prmNro )) {
+                System.out.println("Elemento<"+i+">: " +Vector[i]);
+            }
+            i++;
+        }
+    }
+    static boolean esMultiplo(int prmElemento, int prm2Multiplo){
+        while (prmElemento > 0) {
+            prmElemento  = prmElemento - prm2Multiplo; 
+        }
+        if(prmElemento==0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    static void OrdenarVectorBurbuja() {
         
     }
 

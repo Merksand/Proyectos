@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "pp",
+            "request": "launch",
+            "mainClass": "pp",
+            "projectName": "Proy_3df6fe44"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
