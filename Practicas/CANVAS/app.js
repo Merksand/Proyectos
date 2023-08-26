@@ -10,20 +10,28 @@ ctx.stroke();
 let inicialX;
 let inicialY;
 
-canvas.addEventListener("mousedown",(e)=>{
+canvas.addEventListener("mousemove",(e)=>{
+    // console.log(e.x);
     // alert(223)
-    // console.log(e);
     inicialX = e.offsetX
     inicialY = e.offsetY
+    CursorX = e.x
+    CursorY = e.y
+    // dibujar(inicialX,inicialY)
 
-    ctx.beginPath();
+      ctx.beginPath();
     ctx.moveTo(inicialX,inicialY)
-    ctx.lineWith = 60
+    ctx.lineWidth = 20
     ctx.strokeStyle = "#332"
     ctx.lineCap = "round"
     ctx.lineJoin ="round"
-    ctx.lineTo(inicialX,inicialY)
+    ctx.lineTo(CursorX,CursorY)
     ctx.stroke();
-    // inicialX = CursorX
-    // inicialY = CursorY
+    inicialX = CursorX
+    inicialY = CursorY
+
 })
+function dibujar(CursorX, CursorY){
+
+  
+}
