@@ -24,7 +24,7 @@ let number = document.querySelector(".number")
 let more = document.querySelector(".more")
 let delet = document.querySelector(".delete")
 let color = document.querySelector(".color")
-let x = 80;
+let x = 10;
 function show() {
   number.innerHTML = x
 }
