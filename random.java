@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class pp {
+public class random {
     public static Scanner Teclado = new Scanner(System.in);
     public static int Max = 20;
     public static int[] Vector = new int[Max];
@@ -87,3 +87,4 @@ public class pp {
         System.out.println("Elemento Menor es: " + Men);
         System.out.println("*********************");
     }
+}
