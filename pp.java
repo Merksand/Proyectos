@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class pp {
     public static Scanner Teclado = new Scanner(System.in);
     public static int Max = 20;
@@ -27,6 +28,7 @@ public class pp {
             System.out.println("10.- Invertir un Vector");
             System.out.println("11.- Llenar en vector con serie Fibonacci");
             System.out.println("12.- Ordenar por desplazamiento e insersión");
+            System.out.println("99.- Adicionar elemento unico");
             System.out.println("--------------------------------");
             System.out.println("0.- Salir del Programa");
             System.out.println("-------------------------------");
@@ -67,6 +69,29 @@ public class pp {
                 System.out.println("****************");
                 Multiplo = Teclado.nextInt();
                 MultiplosDeUnNro(Multiplo);
+            }
+            if (Opcion == 6) {
+                System.out.println("****************");
+                System.out.println("Ordenado por metodo burbuja");
+                System.out.println("****************");
+                // Multiplo = Teclado.nextInt();
+                metodoBuruja();
+            }
+            if (Opcion == 7) {
+                System.out.println("****************");
+                System.out.println("Factorial de cada elemento");
+                System.out.println("****************");
+                // Cantidad = Teclado.nextInt();
+                factorialElemento();
+                // devolverFactorial();q1
+            }
+            if(Opcion == 99){
+                System.out.println("****************");
+                System.out.println("Adicion de elementos");
+                System.out.println("****************");
+                System.out.println("Introduce un número");
+                Cantidad = Teclado.nextInt();
+                IntroducirElementoUnico(Cantidad);
             }
 
         }
@@ -111,31 +136,79 @@ public class pp {
         System.out.println("Elemento Menor es: " + Men);
         System.out.println("*********************");
     }
+
     static void MultiplosDeUnNro(int prmNro) {
         int i = 0;
         while (i < CantElem) {
-            if (esMultiplo(Vector[i],prmNro )) {
-                System.out.println("Elemento<"+i+">: " +Vector[i]);
+            if (esMultiplo(Vector[i], prmNro)) {
+                System.out.println("Elemento<" + i + ">: " + Vector[i]);
             }
             i++;
         }
     }
-    static boolean esMultiplo(int prmElemento, int prm2Multiplo){
+
+    static boolean esMultiplo(int prmElemento, int prm2Multiplo) {
         while (prmElemento > 0) {
-            prmElemento  = prmElemento - prm2Multiplo; 
+            prmElemento = prmElemento - prm2Multiplo;
         }
-        if(prmElemento==0){
+        if (prmElemento == 0) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
-    static void OrdenarVectorBurbuja() {
-        
+
+    static void metodoBuruja() {
+        int aux;
+        for (int i = 0; i < CantElem;i++) {
+            for (int j = i + 1; j < CantElem; j++) {
+                if (Vector[i] > Vector[j]) {
+                    aux = Vector[i];
+                    Vector[i] = Vector[j];
+                    Vector[j] = aux;
+                }
+            }
+        }
+        for (int k = 0; k < CantElem; k++) {
+            System.out.println(Vector[k]);
+        }
+
     }
 
+    static void devolverFactorial(int factorial){
+       int i = 0;
+       while(i < CantElem){
+           i++;
+        }
+    }
+    static void factorialElemento(){
+        int factorial = 0;
+        while(CantElem > 0){
+            for(int i = 0; i < CantElem; i++){
+                factorial = factorial * Vector[i];
+                System.out.println(factorial);
+            } 
+            CantElem--;
+            System.out.println();  
+            // devolverFactorial(factorial);
+        }
+    }
+    
+
+
+
+
+
+
+
+
+    static void IntroducirElementoUnico(int prmElemento){
+        Vector[CantElem] = prmElemento;
+        CantElem++;
+        System.out.println("Elemento adicionado" );
+
+    }
+
+    
+
 }
-
-
-
-
