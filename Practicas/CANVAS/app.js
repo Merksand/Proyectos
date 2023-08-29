@@ -1,85 +1,73 @@
-let canvas = document.querySelector(".canvas");
-const ctx = canvas.getContext("2d");
+let canvas = document.querySelector(".canvas")
+let ctx = canvas.getContext("2d")
+let draw = false
+canvas.addEventListener("mousedown", (e) => {
+  draw = true
+  ctx.beginPath()
+  ctx.moveTo(e.offsetX, e.offsetY)
+})
+canvas.addEventListener("mousemove", (e) => {
+  if (draw) {
+    ctx.lineTo(e.offsetX, e.offsetY)
+    ctx.lineWidth = x
+    ctx.strokeStyle = col
+    ctx.lineJoin = "round"
+    ctx.lineCap = "round"
+    ctx.stroke();
+  }
+})
+canvas.addEventListener("mouseup", () => {
+  draw = false
+})
+let less = document.querySelector(".less")
+let number = document.querySelector(".number")
+let more = document.querySelector(".more")
+let delet = document.querySelector(".delete")
+let color = document.querySelector(".color")
+let x = 80;
+function show() {
+  number.innerHTML = x
+}
+less.addEventListener("click", () => {
+  if (x > 5) x -= 5
+  show()
+})
+more.addEventListener("click", () => {
+
+  if (x < 100) x += 5
+  show()
+})
+let col;
+color.addEventListener("change", (e) => {
+  col = e.target.value
+})
+delet.addEventListener("click",()=>{
+  ctx.clearRect(0, 0, canvas.width, canvas.height)
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
 // ctx.fillRect(50, 50, 100, 100);
 ctx.strokeRect(50, 50, 100, 100);
 ctx.arc(100, 100, 50, 0, Math.PI * 2, false);
 ctx.moveTo(50, 50);
 ctx.lineTo(150, 150);
 ctx.stroke();
-
-let inicialX;
-let inicialY;
-
-canvas.addEventListener("mousemove", (e) => {
-  // console.log(e);
-  inicialX = e.offsetX;
-  inicialY = e.offsetY;
-  CursorX = e.x;
-  CursorY = e.y;
-  // dibujar(inicialX,inicialY)
-
-  ctx.beginPath();
-  ctx.moveTo(inicialX, inicialY);
-  ctx.lineWidth = 10;
-  ctx.strokeStyle = "#332";
-  ctx.lineCap = "round";
-  ctx.lineJoin = "round";
-  ctx.lineTo(CursorX, CursorY);
-  ctx.stroke();
-  // inicialX = CursorX;
-  // inicialY = inicialY;
-
-});
-
-
-
-
-
-
-function dibujar(CursorX, CursorY) {
-
-}
-
-
-
-/* 
-let canvas = document.querySelector(".canvas");
-const ctx = canvas.getContext("2d");
-
-let dibujando = false;
-let lastX = 0;
-let lastY = 0;
-
-canvas.addEventListener("mousedown", (e) => {
-  dibujando = true;
-  lastX = e.offsetX;
-  lastY = e.offsetY;
-  ctx.beginPath();
-  ctx.moveTo(lastX, lastY);
-});
-
-canvas.addEventListener("mousemove", (e) => {
-  if (!dibujando) return;
-  ctx.lineTo(e.offsetX, e.offsetY);
-  ctx.lineWidth = 10;
-  ctx.strokeStyle = "#02f";
-  ctx.lineCap = "round";
-  ctx.lineJoin = "round";
-  ctx.stroke();
-  lastX = e.offsetX;
-  lastY = e.offsetY;
-});
-
-canvas.addEventListener("mouseup", () => {
-  dibujando = false;
-  ctx.beginPath();
-});
-
 */
-
-
-
-
-
-
-

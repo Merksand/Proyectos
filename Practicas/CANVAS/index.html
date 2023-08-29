@@ -1,38 +1,63 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Canvas</title>
 </head>
+
 <body>
     <style>
-        body{
+        body {
             margin: 0;
             padding: 0;
-            /* height: 100vh;
-            width: 100vw; */
-            background     : #0009;
-        }
-        .content{
-            height: 100vh;
-            /* width: 30vw; */
-            box-sizing: border-box;
-            border:  .3vw solid #433;
-            /* padding: 1vw; */
+            /* background: #0005; */
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            user-select: none;
         }
-        .canvas{
-            background: #0003;
-            /* margin: 50px auto; */
+        .canvas {
+            border: 3px solid #3ab;
+        }
+        .content {
+            width: 755px;
+            height: 80px;
+            background: rgba(14, 253, 106, 0.979);
+            display: inline-flex;
+            align-items: center;
+            box-sizing: border-box;
+            padding: 1rem;
+            gap: 10px;
+        }
+        button,
+        input,span{
+            font-size: 2rem;
+            height: 3rem;
+            width: 3rem;
+            background: #fff;
+            border: none;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
+        button:last-child {
+            margin-left: auto;
         }
     </style>
+    <canvas class="canvas" width="750" height="500"></canvas>
     <div class="content">
-        <canvas class="canvas" width="700" height="500"></canvas>
+        <button class="less">-</button>
+        <span class="number">10</span>
+        <button class="more">+</button>
+        <input class="color" type="color" name="color" id="color">
+        <button class="delete">X</button>
     </div>
     <script src="app.js"></script>
 </body>
+
 </html>
