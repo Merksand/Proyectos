@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "random",
+            "request": "launch",
+            "mainClass": "random",
+            "projectName": "Proy_3df6fe44"
+        },
+        {
+            "type": "java",
             "name": "pp",
             "request": "launch",
             "mainClass": "pp",
