@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      body {
+        margin: 0;
+        background: rgba(85, 85, 247, 0.993);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .content {
+        display: flex;
+        flex-direction: row-reverse;
+      }
+      img,
+      input {
+        background: #fff;
+        padding: 0;
+        border: none;
+        outline: none;
+        transition: 0.6s ease;
+      }
+      .texto {
+        box-sizing: border-box;
+        font-size: 1.1rem;
+        /* padding: 1rem; */
+        width: 0;
+      }
+      .exp {
+        padding: 10px;
+        width: 260px;
+      }
+    </style>
+    <div class="content">
+      <img src="buscar.png" width="50" height="50" class="buscador" />
+      <input type="text" class="texto" placeholder="Buscando..." />
+    </div>
+    <script>
+      const buscador = document.querySelector(".buscador");
+      const texto = document.querySelector(".texto");
+      buscador.addEventListener("click", () => {
+        texto.focus();
+        texto.classList.toggle("exp");
+      });
+    </script>
+  </body>
+</html>

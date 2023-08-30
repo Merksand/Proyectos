@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let v = new Array(10)
+        let n =parseInt(prompt("ingrese la longitud del vector"))
+        if(n<=10){
+            for(let i=0;i<n;i++){
+                v[i]=parseInt(prompt("ingrese un numero"))
+
+            }
+            let tb = "<table border=1></td> </tr>" 
+            for(let i=0;i<n;i++){
+                tb+="<td>" + v[i] + "</td>"
+            }
+            tb+="</table>"
+            document.write(tb)
+        }
+    </script>
+</body>
+</html>

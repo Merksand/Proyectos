@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      body {
+        /* box-sizing: border-box; */
+        height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      main {
+        display: grid;
+        /* flex-direction: column; */
+      }
+      h1 {
+        font-size: 50px;
+        font-family:  Verdana, Geneva, Tahoma, sans-serif;
+      }
+      div {
+        font-size: 120px;
+        margin: auto;
+        color: rgb(21, 164, 117);
+      }
+      button {
+        padding: 8px;
+        border-radius: 5px;
+        border: none;
+        background: #47dbc4f1;
+        font-size: 1rem;
+      }
+    </style>
+    <main>
+      <h1>CONTADOR</h1>
+      <div class="pant">0</div>
+      <div class="botones">
+        <button class="decremento">Decremento</button>
+        <button class="reset">Reset</button>
+        <button class="incremento">Incremento</button>
+      </div>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
