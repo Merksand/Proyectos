@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" class="vector">
+    <div class="resultado"></div>
+    <button class="boton">CLICK</button>
+    <script>
+        let resultado = document.querySelector(".resultado")
+        var boton = document.querySelector(".boton")
+        boton.addEventListener("click",()=>{
+            var cadena = document.querySelector(".vector").value
+            vector = cadena.split(" ")
+            let tb = "<br><table border='1' cellspacing='0' cellpadding='6'><tr>"
+            let suma =0;
+            let cont =0;
+            for (let i = 0; i < vector.length; i++) {
+                if(vector[i]>0 && vector[i]%2==0){
+                suma += parseInt(vector[i])
+                tb += "<td bgcolor='red'>"+vector[i]+"</td>"
+                cont++
+                
+            }
+            tb += "<td>"+vector[i]+"</td>"
+            }
+            if(cont!= 0){
+                let promedio = suma /cont
+            
+            tb+="</tr></table><br>"
+            resultado.innerHTML = tb+"<br>"+promedio
+            console.log(tb);
+            console.log(suma);
+            console.log(promedio);
+            }
+            else{
+                resultado.innerHTML="No existen numeros pares"
+            }
+            
+            
+        })
+    </script>
+</body>
+</html>

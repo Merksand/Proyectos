@@ -1,0 +1,1 @@
+SELECT cliente FROM cliente;
