@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- hacer un programa en js para calcular el producto de los cuadrados de las terceras partes de dos numeros introducidos por el usuario a traves de la interfaz html-->
+
+    <p>Introduce un numero: <input type="text" class="num1" /></p>
+    <p>Introduce un numero: <input type="text" class="num2" /></p>
+    <button class="calcular">Calcular</button>
+    <p class="resultado"></p>
+    <script>
+      let calcular = document.querySelector(".calcular");
+      let resultado = document.querySelector(".resultado");
+      calcular.addEventListener("click", () => {
+        let num1 = parseInt(document.querySelector(".num1").value);
+        let num2 = parseInt(document.querySelector(".num2").value);
+        let terceraParte1 = Math.pow(num1, 1 / 3);
+        let terceraParte2 = Math.pow(num2, 1 / 3);
+        let res = Math.pow(terceraParte1, 2) * Math.pow(terceraParte2, 2);
+        resultado.innerHTML = "El resultado es: " + res;
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Hacer un programa en js para calcular el producto de los cuadrados de las mitades de todos los caracteres digitos numericos pares y una cadena numerica introducida por el usuario a traves de la interfaz html -->
+
+    <p>Ingresa una cadena numérica: <input type="text" class="numero" /></p>
+    <button>Calcular</button>
+    <div class="resultado"></div>
+    <script>
+      let calcular = document.querySelector("button");
+      let resultado = document.querySelector(".resultado");
+      calcular.addEventListener("click", () => {
+        var cadena = document.querySelector(".numero").value;
+        var productoCuadrados = 1;
+        for (var i = 0; i < cadena.length; i++) {
+          var caracter = parseInt(cadena[i], 10);
+          var mitad = caracter / 2;
+          var cuadradoMitad = Math.pow(mitad, 2);
+          productoCuadrados *= cuadradoMitad;
+        }
+        resultado.innerHTML = "El resultado es : " + productoCuadrados;
+      });
+    </script>
+  </body>
+</html>
