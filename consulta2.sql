@@ -25,6 +25,8 @@ SELECT * FROM Products WHERE ProductName LIKE '%x' --Empieza , termina y verific
 SELECT * FROM Employees WHERE FirstName LIKE 'A___' --Los __ solo se utiliza cuando se sabe el tamaño exacto de la palabra a buscar
 SELECT * FROM Products WHERE ProductName LIKE 'ma____________%'
 SELECT * FROM Products WHERE  SupplierID IN (3,4,5)  --El IN es una abreviacion a OR, comunmente se utiliza para grandes cantidades OR
-SELECT * FROM Products WHERE ProductName NOT IN ('Tofu','Queso%')
-
-
+SELECT * FROM Products WHERE CategoryID NOT IN ('1','2','3','4','5','6')
+SELECT sum(Price) FROM Products --Suma todo un campo
+SELECT AVG(Price) FROM Products --Saca el promedio
+SELECT CAST(AVG(Price) as int) FROM Products --CAST lo convierte a entero a un decimal sin importar sus decimales o sea no va a redondear
+SELECT CAST(ROUND(AVG(price),0)AS INT) as Promedio_Productos FROM Products WHERE CategoryID IN ('1','4','5') --Para sacar promedio y redoundear para que quede numero entero
