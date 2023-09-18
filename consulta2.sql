@@ -39,3 +39,5 @@ SELECT LOWER('HOLA MUNDO') AS Minusculas; -- A minuscula
 SELECT CONCAT(first_name, ' ', last_name) as nombre_Completo FROM patients; --Concatena dos campos en una
 
 SELECT YEAR(fecha_nacimiento) as AnioNacimiento FROM personas; --Extrae sólo el año
+
+select * from Employees order by(select null) offset 8 ROWS FETCH next 2 ROWS ONLY --Salta 8 y selecciona 2 y con el order salen bien en v. 2012 y sin sale en v. 2022
