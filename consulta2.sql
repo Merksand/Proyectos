@@ -37,3 +37,5 @@ SELECT LEN("HOLA MUNDO") --Dice la longitud normal
 SELECT UPPER('hola mundo') AS Mayusculas; -- A mayuscula
 SELECT LOWER('HOLA MUNDO') AS Minusculas; -- A minuscula
 SELECT CONCAT(first_name, ' ', last_name) as nombre_Completo FROM patients; --Concatena dos campos en una
+
+SELECT YEAR(fecha_nacimiento) as AnioNacimiento FROM personas; --Extrae sólo el año
