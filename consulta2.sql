@@ -30,3 +30,10 @@ SELECT sum(Price) FROM Products --Suma todo un campo
 SELECT AVG(Price) FROM Products --Saca el promedio
 SELECT CAST(AVG(Price) as int) FROM Products --CAST lo convierte a entero a un decimal sin importar sus decimales o sea no va a redondear
 SELECT CAST(ROUND(AVG(price),0)AS INT) as Promedio_Productos FROM Products WHERE CategoryID IN ('1','4','5') --Para sacar promedio y redoundear para que quede numero entero
+
+
+
+SELECT LEN("HOLA MUNDO") --Dice la longitud normal
+SELECT UPPER('hola mundo') AS Mayusculas; -- A mayuscula
+SELECT LOWER('HOLA MUNDO') AS Minusculas; -- A minuscula
+SELECT CONCAT(first_name, ' ', last_name) as nombre_Completo FROM patients; --Concatena dos campos en una
