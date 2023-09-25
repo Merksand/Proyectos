@@ -60,7 +60,10 @@ COMMIT --Para guardar todo lo hecho despues de BEGIN, no correrlo despues de un 
 ------------------------------------------------------------------------------------------------------------------------------------
 SELECT EmployeeID,FirstName,premio FROM Employees e
 INNER JOIN premios p ON EmployeeID = id_empleado  --Union join con datos relacionados
-
+-
+SELECT EmployeeID,FirstName,premio FROM Employees e
+FULL OUTER JOIN premios p ON EmployeeID = id_empleado  --Muestra todos los datos incluso puede salir duplicados, como UNION Y UNION ALL
+-
 SELECT EmployeeID,FirstName,premio FROM Employees e
 LEFT JOIN premios p ON EmployeeID = id_empleado  --Todos los datos de la tabla izquierda y los datos relacionado en la derecha, y con RIGHT JOIN es al reves
 ----
