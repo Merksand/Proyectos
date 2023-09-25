@@ -30,9 +30,19 @@ SELECT sum(Price) FROM Products --Suma todo un campo
 SELECT AVG(Price) FROM Products --Saca el promedio
 SELECT CAST(AVG(Price) as int) FROM Products --CAST lo convierte a entero a un decimal sin importar sus decimales o sea no va a redondear
 SELECT CAST(ROUND(AVG(price),0)AS INT) as Promedio_Productos FROM Products WHERE CategoryID IN ('1','4','5') --Para sacar promedio y redoundear para que quede numero entero
-
-
-
+SELECT MIN(PRICE) FROM Products WHERE ProductName IS NOT NULL --Para saber el precio minimo
+SELECT TOP 1 ProductName,Price FROM Products WHERE ProductName IS NOT NULL ORDER BY Price --Lo mismo que el anterior pero esto con nombre
+SELECT CategoryID,CAST(ROUND(AVG(PRICE),0)AS INT) AS SUMA_TOTAL FROM Products WHERE CategoryID IS NOT NULL GROUP BY CategoryID --Agrupado  y redondeado
+SELECT CategoryID,(AVG(PRICE)) AS SUMA_TOTAL FROM Products WHERE CategoryID IS NOT NULL GROUP BY CategoryID -- sin redondear
+SELECT ProductID,sum(Quantity)as Total FROM OrderDetails group by ProductID having sum(QUANTITY) < 50 --Having se utilizar solo con group y sus condiciones, el WHERE filtra registro , el HAVING filtra grupos
+SELECT TOP 5 ProductID,sum(Quantity)as Total FROM OrderDetails group by ProductID order by Total desc 
+------------------------------------------------------------------------------
+SELECT ProductID,SUM(Quantity) as Cantidad,
+(SELECT ProductName FROM Products WHERE ProductID = OrderDetails.ProductID) AS NombreProducto,
+(SELECT Price FROM Products WHERE ProductID = OrderDetails.ProductID) AS Precio,
+SUM(Quantity) * (SELECT Price FROM Products WHERE ProductID = OrderDetails.ProductID) AS Total_Recaudado
+from OrderDetails group by ProductID ORDER BY Total_Recaudado --Subconsultas complejas pero mas facil con los join
+--------------------------------------------------------------------------------------------------------------------------------
 SELECT LEN("HOLA MUNDO") --Dice la longitud normal
 SELECT UPPER('hola mundo') AS Mayusculas; -- A mayuscula
 SELECT LOWER('HOLA MUNDO') AS Minusculas; -- A minuscula
@@ -41,3 +51,32 @@ SELECT CONCAT(first_name, ' ', last_name) as nombre_Completo FROM patients; --Co
 SELECT YEAR(fecha_nacimiento) as AnioNacimiento FROM personas; --Extrae sólo el año
 
 select * from Employees order by(select null) offset 8 ROWS FETCH next 2 ROWS ONLY --Salta 8 y selecciona 2 y con el order salen bien en v. 2012 y sin sale en v. 2022
+--------------------------------------------------------------------------------------------------------------------------------
+TRUNCATE TABLE products --Mejor opcion para eliminar todos los registros de la tabla porque libera el espacio de almacenamiento de manera más rápida
+DELETE FROM products --Tambien se puede pero es mejor usarlo con WHERE
+BEGIN TRANSACTION  --Crear como un campo donde se puede revertir los cambios que se haga dentro
+ROLLBACK  --Retrocedes todos los cambios hechos despues del BEGIN, no necesita COMMIT
+COMMIT --Para guardar todo lo hecho despues de BEGIN, no correrlo despues de un ROLLBACK
+------------------------------------------------------------------------------------------------------------------------------------
+SELECT EmployeeID,FirstName,premio FROM Employees e
+INNER JOIN premios p ON EmployeeID = id_empleado  --Union join con datos relacionados
+
+SELECT EmployeeID,FirstName,premio FROM Employees e
+LEFT JOIN premios p ON EmployeeID = id_empleado  --Todos los datos de la tabla izquierda y los datos relacionado en la derecha, y con RIGHT JOIN es al reves
+----
+SELECT EmployeeID,FirstName,premio FROM Employees e
+LEFT JOIN premios p ON EmployeeID = id_empleado
+UNION   --Muestra los datos combinados de los dos lados sin datos duplicados
+SELECT EmployeeID,FirstName,premio FROM Employees e
+RIGHT JOIN premios p ON EmployeeID = id_empleado
+----
+SELECT EmployeeID,FirstName,premio FROM Employees e
+LEFT JOIN premios p ON EmployeeID = id_empleado
+UNION ALL  --Muestra TODOS los datos combinados de los dos lados con datos duplicados
+SELECT EmployeeID,FirstName,premio FROM Employees e
+RIGHT JOIN premios p ON EmployeeID = id_empleado
+--------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
