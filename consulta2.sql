@@ -43,6 +43,8 @@ SELECT ProductID,SUM(Quantity) as Cantidad,
 SUM(Quantity) * (SELECT Price FROM Products WHERE ProductID = OrderDetails.ProductID) AS Total_Recaudado
 from OrderDetails group by ProductID ORDER BY Total_Recaudado --Subconsultas complejas pero mas facil con los join
 --------------------------------------------------------------------------------------------------------------------------------
+SELECT CEILING(price) FROM Products --Redondea para arriba, o sea que 1.2 se convierte en 2
+SELECT FLOOR(price) FROM Products --Redondea para abajo, o sea que 1.8 se convierte en 1
 SELECT LEN("HOLA MUNDO") --Dice la longitud normal
 SELECT UPPER('hola mundo') AS Mayusculas; -- A mayuscula
 SELECT LOWER('HOLA MUNDO') AS Minusculas; -- A minuscula
