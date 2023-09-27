@@ -48,31 +48,46 @@ fun main() {
 
 ///////////////
 fun main() {
-    var list = arrayOf(1,2,3,1,1,2,4,1,1,2,3)
+    fun main() {
+    val numeros = listOf(1, 2, 3, 1, 2, 4, 1, 1, 2, 3)
     var suma = 0
-    for (i in list.indices){
-        if(i >= 6){
-            suma += list[i]
-            
+
+    for (i in numeros.indices) {
+        if (i >= numeros.size - 5) {
+            suma += numeros[i]
         }
     }
-    println("La suma es: $suma")
-    println()
-    /*for(i in 1..10){
-        println("Tabla del $i")
-        for(j in 1..10){
-            println("$i * $j = ${i*j}")
-        }
-            println()
-    }*/
-    println("Tabla del 5")
-  	for(i in 1..10){
-        println("5 * $i = ${5*i}")        
+    println("La suma de los últimos 5 valores es: $suma")
+}
+
+    fun main() {
+    var numero =5
+    for(i in 1..10){
+        println(numero*i)
     }
-    println()
-	var num = arrayOf(1,2,3,4,5,6,7,8,9,10)
-    for(i in num.indices){
-        println("3 * $i = ${3*i}")
-           
+}
+    fun main() {
+    val num = arrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+    val numeroElegido = num[2]
+    for (i in 1..12) {
+        println(numeroElegido * i)
     }
+}
+    fun main() {
+    var numeros = arrayOf(5, -11, 15, 20, -25, 30, 35, -37, 45, 50)
+    var positivos=0
+    var negativos=0
+    var multiplosDe15 =0
+    var acumuladoPares=0
+    for(i in numeros){
+        if(i<0) negativos++
+        else positivos++
+        if(i%15==0) multiplosDe15++
+        if(i%2==0) acumuladoPares+=i 
+    }
+    println("Cantidad de valores negativos: $negativos")
+    println("Cantidad de valores positivos: $positivos")
+    println("Cantidad de múltiplos de 15: $multiplosDe15")
+    println("Valor acumulado de números pares: $acumuladoPares")
+}
 }
