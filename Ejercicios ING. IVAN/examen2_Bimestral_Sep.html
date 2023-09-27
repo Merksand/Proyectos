@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <h1>Examen 2</h1>
+
+    <label for="numeros">Ingresa números (separados por espacios): </label>
+    <input type="text" id="numeros" /><br /><br />
+
+    <button onclick="calcularCantidad()">Calcular</button>
+
+    <div id="resultado"></div>
+
+    <script>
+      function calcularCantidad() {
+        const inputNumeros = document.getElementById("numeros").value;
+        const numeros = inputNumeros.split(" ").map(Number);
+
+        let paresYMultiplosDeTres = 0;
+
+        for (let i = 0; i < numeros.length; i++) {
+          const num = numeros[i];
+          if (num % 2 === 0 && num % 3 === 0) {
+            paresYMultiplosDeTres++;
+          }
+        }
+
+        document.getElementById(
+          "resultado"
+        ).innerHTML = `Cantidad de números pares y múltiplos de 3: ${paresYMultiplosDeTres}`;
+      }
+    </script>
+  </body>
+</html>

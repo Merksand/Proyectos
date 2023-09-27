@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <h1>Examen 1</h1>
+    <p>Introduce la cantidad de números:</p>
+    <input type="text" id="cantidad" />
+    <button onclick="calcular()">Calcular</button>
+    <p id="resultado"></p>
+
+    <script>
+      function calcular() {
+        var cantidad = document.getElementById("cantidad").value;
+        var numeros = [];
+
+        for (var i = 1; i <= cantidad; i++) {
+          var numero = prompt("Introduce el número " + i);
+
+          if (numero % 2 != 0 && numero % 5 == 0) {
+            numeros.push(numero);
+          }
+        }
+
+        if (numeros.length > 0) {
+          var suma = 0;
+
+          for (var i = 0; i < numeros.length; i++) {
+            suma += parseInt(numeros[i]);
+          }
+
+          var promedio = suma / numeros.length;
+          var raiz = Math.sqrt(promedio);
+
+          document.getElementById("resultado").innerHTML =
+            "La raíz cuadrada del promedio de los números impares y múltiplos de 5 es " +
+            raiz;
+        } else {
+          document.getElementById("resultado").innerHTML =
+            "Ningún número cumple la condición";
+        }
+      }
+    </script>
+  </body>
+</html>
