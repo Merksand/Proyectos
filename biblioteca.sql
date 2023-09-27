@@ -1,0 +1,6 @@
+INSERT INTO autor('nombre') VALUES('Nuevo autor')
+INSERT INTO editorial('nombre') VALUES('Nuevo autor')
+INSERT INTO editorial('editorial') VALUES('Nuevo lector')
+INSERT INTO libro('titulo','id_autor','id_editorial') VALUES('Nuevo libro',1,1)
+INSERT INTO libro_autor('id_libro','id_auto') VALUES(1001,1)
+INSERT INTO prestamos_libros('id_libro','id_lector','fecha_devolver','fecha_prestamo') VALUES('')
