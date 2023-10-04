@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" class="matriz">
+    <input type="button" class="boton" value="Mostrar">
+    <!-- <br> -->
+    <p class="contenedor"></p>
+    <script>
+        // var boton = document.querySelector(".boton")
+        // var contenedor = document.querySelector(".contenedor")
+        // var tabla = "<table border = '1' cellpading='10' cellspacing = '0'>"
+        // boton.addEventListener("click",()=>{
+        //     var cadena = document.querySelector(".matriz").value
+        //     var matriz = cadena.+split(",")
+
+        //     for(let i = 0; i < matriz.length; i++){
+        //         var fila = matriz[i].split(",")
+        //         tabla+= "<tr>"
+
+        //         for(let j = 0; j < fila.length; j++){
+        //             tabla+= "<td>" + fila[j] + "</td>"
+        //         }
+        //         tabla+= "</tr>"
+        //     }
+        //     contenedor.innerHTML = tabla
+
+        // })
+
+
+
+       var boton = document.querySelector(".boton")
+        var contenedor = document.querySelector(".contenedor")
+        var tabla = "<table border = '1' cellpading='10' cellspacing = '0'>"
+        boton.addEventListener("click",()=>{
+            var cadena = document.querySelector(".matriz").value
+            var matriz = cadena.split(";")
+            
+           for(let i = 0; i < matriz.length; i++){
+               var fila = matriz[i].split(",")
+               tabla+= "<tr>"
+               for(let j = 0; j < fila.length; j++){
+                   tabla+= "<td>" + fila[j] + "</td>"
+               }
+               tabla+= "</tr>"
+            }
+
+            contenedor.innerHTML = tabla
+        })
+        // contenedor.innerHTML = tabla
+    </script>
+</body>
+</html>
