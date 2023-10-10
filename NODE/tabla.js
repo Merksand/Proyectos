@@ -18,4 +18,5 @@ crearArchivo(base)
 
 
 
-console.log("Fin de programa")
+//npm i colors@1.0.0     Descargar version especifica
+//npm update

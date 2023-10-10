@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+    <script>
+        let matriz = Array()
+        let nf = parseInt(prompt("Ingrese numero de filas"))
+        let nc = parseInt(prompt("Ingrese numero de columnas"))
+        let suma  = 0;
+        let cont = 0;
+        for(let i = 0; i < nf; i++){
+            matriz[i] = Array()
+            for(let j = 0; j < nc; j++){
+                matriz[i][j] = parseInt(prompt("ingrese un numero"))
+                suma += matriz[i][j]
+                cont++
+            }
+        }
+        for(let i = 0; i < nf; i++){
+            for(let j = 0; j < nc; j++){
+                document.write(matriz[i][j])
+            }
+            document.write("<br>")
+        }
+        let tabla = "<table border = '1' cellpading='10' cellspacing = '0'>"
+        for(let i = 0; i < nf; i++){
+            tabla += "<tr>"
+            for(let j = 0; j < nc; j++){
+                tabla += "<td align='center' bgcolor='green'>" + matriz[i][j] + "</td>"
+            }
+            tabla += "</tr>"
+        }
+        let promedio = suma / cont
+        tabla += "</table>"
+        document.write(tabla)
+        document.write("<br>")
+        document.write("el promedio es: " + promedio)
+
+        //hacer un programa para calcular el promedio de los elementos de una matriz de numeros enteros
+    </script>
+</body>
+</html>
