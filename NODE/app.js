@@ -1,4 +1,3 @@
-console.log("hola".green);
 console.log("-------------------------------------------");
 const {crearArchivo} = require('./helpers/multiplicar')
 

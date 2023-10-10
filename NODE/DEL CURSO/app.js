@@ -25,4 +25,8 @@ setTimeout(()=>{
 
 
 
+<<<<<<< HEAD
 console.log("Fin de programa")
+=======
+console.log("Fin de programa")
+>>>>>>> main
