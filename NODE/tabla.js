@@ -1,4 +1,3 @@
-console.log("hola".green);
 console.log("-------------------------------------------");
 const {crearArchivo} = require('./helpers/multiplicar')
 
@@ -21,5 +20,3 @@ crearArchivo(base)
 
 //npm i colors@1.0.0     Descargar version especifica
 //npm update
-//npm update
-
