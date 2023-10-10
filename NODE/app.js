@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // for (let i = 0; i < 4; i++) {
 //     console.log(i*2);
     
@@ -26,3 +27,6 @@ setTimeout(()=>{
 
 
 console.log("Fin de programa")
+=======
+console.log("hola".green);
+>>>>>>> ecc4d33 (Lozano)
