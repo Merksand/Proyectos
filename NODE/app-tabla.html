@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablas de multiplicar</title>
+</head>
+
+<body>
+    <h3>Tablas de multiplicar</h3>
+    <p>Ingrese qué tabla desea ver: <input type="text" id="valor"></p>
+    <button id="descargar">Descargar</button>
+
+    <script>
+        document.getElementById('descargar').addEventListener('click', () => {
+            let valor = document.getElementById('valor').value;
+            let total = '';
+
+            for (let i = 1; i <= 10; i++) {
+                total += `${valor} x ${i} = ${valor * i}\n`;
+            }
+
+            let blob = new Blob([total], { type: 'text/plain' });
+            let url = window.URL.createObjectURL(blob);
+
+            let a = document.createElement('a');
+            a.href = url;
+            a.download = `tabla-${valor}.txt`;
+            a.click();
+            window.URL.revokeObjectURL(url);
+        });
+    </script>
+</body>
+
+</html>
