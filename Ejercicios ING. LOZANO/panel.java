@@ -45,8 +45,16 @@ public class RecursividadLozanoOctubre {
             opcionL = Teclado.nextInt();
             if (opcionL == 1) {
                 System.out.println("Listar una Serie");
+                System.out.println("Digite la cantidad de elementos");
+                int n = Teclado.nextInt();
+                listarSerie(n);
             } else if (opcionL == 2) {
-                // Lógica para calcular el factorial
+                System.out.println("Encuentra el Factorial");
+                System.out.println("Calcular Factorial");
+                System.out.println("Digite el numero");
+                int n = Teclado.nextInt();
+                System.out.println(Factorial(n));
+               
             }
         }
     }
@@ -54,6 +62,13 @@ public class RecursividadLozanoOctubre {
         if(n>0){
             listarSerie(n-1);
             System.out.println(n);
+        }
+    }
+    static void Factorial(int n){
+        if(n>1){
+            return n*Factorial(n-1);
+        }else{
+            return 1;
         }
     }
 
