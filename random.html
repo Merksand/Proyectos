@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+input, button {
+    margin: 5px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+ 
+    </style>
+    <div class="container">
+        <h1>Lista de Tareas</h1>
+        <input type="text" id="newTask" placeholder="Nueva tarea">
+        <button id="addTask">Agregar Tarea</button>
+        <ul id="taskList"></ul>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+                const taskList = document.getElementById('taskList');
+                const newTaskInput = document.getElementById('newTask');
+                const addTaskButton = document.getElementById('addTask');
+
+                function renderTaskList() {
+                    taskList.innerHTML = '';
+                    const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+                    tasks.forEach(task => {
+                        const li = document.createElement('li');
+                        li.textContent = task;
+                        const deleteButton = document.createElement('button');
+                        deleteButton.textContent = 'Eliminar';
+                        deleteButton.addEventListener('click', () => {
+                            const updatedTasks = tasks.filter(t => t !== task);
+                            localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+                            renderTaskList();
+                        });
+                        li.appendChild(deleteButton);
+                        taskList.appendChild(li);
+                    });
+                }
+
+                addTaskButton.addEventListener('click', () => {
+                    const newTask = newTaskInput.value;
+                    if (newTask) {
+                        const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+                        tasks.push(newTask);
+                        localStorage.setItem('tasks', JSON.stringify(tasks));
+                        newTaskInput.value = '';
+                        renderTaskList();
+                    }
+                });
+
+                renderTaskList();
+            });
+
+    </script>
+</body>
+
+</html>
