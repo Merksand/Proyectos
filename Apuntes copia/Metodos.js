@@ -1,6 +1,7 @@
 let met ="Todos son mierda y unos putos de mierda la mierda perro";
 let mete =9384725;
 let meter = ["manzana","pera","sandia","chirimoya","melon","uva","banana"]
+const nombres = ['Leos', 'Isabel', 'Ían', 'Le']
 const carrito = [
      { nombre: 'Monitor 27 Pulgadas', precio: 500 },
      { nombre: 'Televisión',          precio: 100 },
@@ -11,7 +12,8 @@ const carrito = [
  ]
 let metero = [5,7,6,4,8,9,3,2,0,1]
 rs = met.search("mierda");
-rs = met.indexOf("mierda",29);
+rs = met.indexOf("mierda",29);//Te dice en que posicion esta, con el segundo parametro se podra busca la posicion desde el 0 hasta su posicion actual y tambien es opcional, y si no existe dara -1
+rs = met.includes("unos")//Verifica si hay esa palabra dara true y si no pues false
 rs = met.lastIndexOf("mierda",12);//El seg. parametro cuenta del inicio hacia atras para buscar la palabra
 rs = met.slice(-9,-1) //Para corta un String menos que substring
 rs = met.substring(6,12)
@@ -27,16 +29,17 @@ rs = met.charAt(2)
 rs = met.charCodeAt(2)//Devulve un codigo UTF-16
 rs = met.length
 rs = met.match(/mierda/g)//Busca cadena y devuekve como array
-rs = met.startsWith("m",10)//Devuelve true si la palabra y la longitud son iguales
-rs = met.endsWith("o",2)//Del numero uno menos para encontrar dar true
-rs = met.includes("unos")//Verifica si hay esa palabra
+
+let frase = "Hola mundo"
+console.log(frase.startsWith("Hola"));//comprueba si una cadena comienza con los caracteres proporcionados y devuelve true si lo hace, y false si no.
+console.log(frase.endsWith("do"))//verifica si una cadena termina con los caracteres proporcionados y devuelve true si lo hace, y false si no.
 /******** METODOS EN ARRAY ******* */
 
 
 rs = met.split(" ")//Convierte en array a una cadena
 rs = meter.sort()//ordena una matriz alfabeticamente
 rs = meter.reverse()//Invierte elementos de una matriz y con sort puede invertirlo alfabeticamente
-// rss = metero.sort(function(a,b){return a-b})//ordena numericamente los arrays
+rs = metero.sort((a,b)=> b-a)//ordena de forma invertida, todo depende del orden de a y b    a-b b-a
 rs = meter.push("palabra")//Sirve para añadir un array a lo ultimo
 rs = meter.unshift("palabra")//Funcion que puede estar al ultimo pero pone al principio en un array
 rs = meter.pop("palabra");//Elimina el ultimo elemento de un arreglo
@@ -58,9 +61,9 @@ console.log(isNaN(met));//Para saber si no es un numero
 let r =2;
 rs = r.toExponential(2)//Para exponentes grande "233e+8"
 rs = r.toFixed(2)//devuelve con centavos, bueno para dinero
-let alto = window.screen.height
-let ancho = window.screen.width
-let yt =window.location.href
+// let alto = window.screen.height
+// let ancho = window.screen.width
+// let yt =window.location.href
 //let gg= confirm("me la pelas")
 
 Math.round()//redondea normal
@@ -76,22 +79,35 @@ Math.floor()//redondea hacia abajo del decimal por ejmplo 2.9 = 2
 let array = ["Perro","Gato","Elefante","jaque"]
 array.push()
 
-let resultado = array.filter(array=>array.length==4)//condicional parra arrays empieza de 1
-document.write(resultado)
+let resultado = array.filter(array=>array.length >= 5)//condicional parra arrays, empieza de 1
+console.log(resultado);
 
 let num = [1,2,3,4,5,6,7,8,9,10] 
 let mapear = num.map(nu=>  "<br>"+ nu +" culo")
-document.write(mapear)
+console.log(mapear)
+
 
 let sumar = num.reduce((a,b)=> a+b)
-document.write(sumar)
+console.log(sumar)
 //////////////
-rs = met.some(e => e.nombre == "Celular")//En un arreglo de se puede utilizar en arrays tanto en objetos .some para encontrar un elemento en un objeto en vez de .includes ya que eso no sirve en este caso
-rs = met.findIndex(e => e.nombre == "Celular")//Encuentra el indice de un array
+rs = carrito.some(e => e.nombre == "Celular")//some solo requiere que al menos uno de los elementos cumpla con la condición para devolver true.
+console.log(rs)
+
+rs = nombres.some(name => name.length >= 4)
+console.log(rs)
+
+encontrar = nombres.find(e => e.length > 1) //permite encontrar el primer elemento que cumple con una condición, este método te DEVUELVE el elemento en sí, no un valor booleano, sino encuentra entonces dara UNDEFINED
+console.log(encontrar);
+
+ever = carrito.every(e => e.precio < 1000)//every requiere que todos los elementos cumplan con la condición para que devuelva true.
+console.log(ever)
+
+rs = carrito.findIndex(e => e.nombre == "Celular")//findIndex es similar a find, pero en lugar de devolver el elemento que cumple con la condición, devuelve el índice de ese elemento, y si no existe el elemento, dara -1
+console.log(rs)
+
 let redu = carrito.reduce((total, producto)=> total + producto.precio,110) //Suma precio del objeto y el tercer parametro es de cuanto quieres empezar
 fil = carrito.filter(e => e.nombre !== "Audifonos")
-ever = carrito.every(e => e.precio < 1000)//Revisa todos, lo contrario de .some
-
+console.log(fil)
 
 
 delete producto.nombre;//palabra eliminar una propiedad de un objeto

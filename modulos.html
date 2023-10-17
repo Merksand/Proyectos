@@ -11,7 +11,19 @@
     <button class="boton">Añadir</button>
     <button class="borrar" onclick="delet()">Borrar</button>
     <button class="a">Click</button>
-    <script src="modulos.js"></script>
+
+
+    <SCRipt>
+        let borrar = document.querySelector(".borrar")
+        function delet(){
+            let texto = document.querySelector(".texto")
+            let bo = texto.value.slice(0,-1)
+            texto.value = bo
+
+        }
+    </SCRipt>
+
+    <script src="modulos.js"></script> 
 
 
 
