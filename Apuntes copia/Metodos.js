@@ -111,3 +111,40 @@ console.log(fil)
 
 
 delete producto.nombre;//palabra eliminar una propiedad de un objeto
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------Metodo array---------------- */
+const a = undefined
+console.log(a);
+console.log(!a);
+console.log(!!a);
+
+
+let frutas = ["Manzana", "Pera", "😎", "Papaya", 9, "Uva", "Banana", "Piña", "❤", 100, "Melon", "ajfigod"]
+const nomb = ['Leos', 'Isabel', 'Ían', 'Le', 'Leonardo', 'Dicaprio']
+const nombre = ["lao", "pao", "zao"]
+const numbers = [6, 3, 99, 3, 4, 2, 0, 7, 12, 5]
+console.log(frutas.indexOf("Uva"));
+console.log(frutas.includes("😎"));
+console.log(frutas.some(fruta => fruta == "Uva"));
+console.log(frutas.some(fruta => fruta.length >= 7));
+console.log(nomb.every(e => e.length >= 2));
+console.log(nomb.find(e => e.length > 5));
+console.log(nomb.findIndex(e => e.length > 6));
+
+
+
+let nuevo = [...numbers]
+console.log(nuevo.sort());
+console.log(numbers.sort((a, b) => b - a));
