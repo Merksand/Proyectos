@@ -1,0 +1,14 @@
+git config --global [user.name](http://user.name/) Merksand 
+
+git config --global [user.](http://user.name/)email miguelangelsp7161@gmail.com  Para configurar el nombre y email
+
+git config --global http.proxy [http://usuario](http://usuario/):contraseña@servidor_proxy:puerto” para que funcione normal y uno esta conectado a un proxy
+
+git config --global -e” es para configurar nombre y email
+
+[alias]
+s = status --short
+l = log
+lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(bold red)%s%C(reset) %C(dim black)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+
+:wq!  w: para escribir  | q: para salir
