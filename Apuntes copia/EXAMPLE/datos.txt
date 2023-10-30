@@ -1,0 +1,57 @@
+Ejercicio 1: Crear una Clase
+
+Crea una clase llamada Persona con un constructor que acepte el nombre y la edad de una persona. La clase debe tener un método presentarse() que imprima en la consola un mensaje como "Hola, mi nombre es [nombre] y tengo [edad] años."
+
+Ejercicio 2: Crear una Clase de Producto
+
+Crea una clase llamada Producto con un constructor que acepte el nombre, precio y cantidad en stock de un producto. La clase debe tener un método calcularTotal() que devuelva el precio total (precio * cantidad).
+
+Ejercicio 3: Crear una Clase de Libro
+
+Crea una clase llamada Libro con un constructor que acepte el título, autor y género de un libro. La clase debe tener un método mostrarInfo() que imprima en la consola la información del libro.
+
+Ejercicio 4: Crear una Clase de Coche
+
+Crea una clase llamada Coche con un constructor que acepte la marca, modelo y año de fabricación de un coche. La clase debe tener un método detalles() que imprima en la consola los detalles del coche.
+
+Ejercicio 5: Crear una Clase de Cuenta Bancaria
+
+Crea una clase llamada CuentaBancaria con un constructor que acepte el nombre del titular y el saldo inicial. La clase debe tener métodos para depositar y retirar dinero, así como un método para consultar el saldo actual.
+
+Ejercicio 6: Crear una Clase de Rectángulo
+
+Crea una clase llamada Rectangulo con un constructor que acepte el ancho y la altura de un rectángulo. La clase debe tener métodos para calcular el área y el perímetro del rectángulo.
+
+Ejercicio 7: Crear una Clase de Estudiante
+
+Crea una clase llamada Estudiante con un constructor que acepte el nombre, la edad y la lista de asignaturas de un estudiante. La clase debe tener un método mostrarInfo() que imprima en la consola la información del estudiante.
+
+//------------------------------
+
+Ejercicio 1: Sistema de Gestión de Empleados
+
+Crea un sistema que permita gestionar empleados en una empresa. Debe permitir agregar, eliminar y actualizar empleados, así como mostrar una lista de todos los empleados.
+
+Ejercicio 2: Juego de Preguntas y Respuestas
+
+Crea un juego de preguntas y respuestas. El programa debe hacer preguntas aleatorias y evaluar las respuestas del usuario.
+
+Ejercicio 3: Calculadora Avanzada
+
+Desarrolla una calculadora que pueda realizar operaciones matemáticas básicas (suma, resta, multiplicación, división) y también operaciones más avanzadas como potenciación, raíces cuadradas y logaritmos.
+
+Ejercicio 4: Sistema de Gestión de Inventarios
+
+Crea un sistema que permita gestionar el inventario de productos en un almacén. Debe permitir agregar productos, actualizar sus existencias y mostrar una lista de todos los productos en stock.
+
+Ejercicio 5: Aplicación de Red Social
+
+Desarrolla una aplicación que permita a los usuarios registrarse, iniciar sesión, publicar mensajes, seguir a otros usuarios y comentar en publicaciones.
+
+Ejercicio 6: Juego de Laberinto
+
+Crea un juego en el que un personaje debe moverse a través de un laberinto para alcanzar una meta. Puedes implementar algoritmos de búsqueda para el personaje.
+
+Ejercicio 7: Sistema de Reservas de Vuelos
+
+Desarrolla un sistema que permita a los usuarios buscar y reservar vuelos. Debe tener funcionalidades como búsqueda por fecha, aeropuertos de origen y destino, y mostrar opciones de vuelos disponibles

@@ -32,7 +32,7 @@ console.log(unirObjetos2);
 /*------------------------------------------- */
 datos.nombre = "Carlos"
 console.log(datos);
-// delete datos.disponible //Elimina el dato del objeto
+delete datos.disponible //Elimina el dato del objeto
 const { nombre, edad, img, direccion, direccion: { nivel: { academico } } } = datos //Destructuracion de datos
 console.log(datos);
 console.log(Object.keys(medidas)); //Devuelve las propiedades

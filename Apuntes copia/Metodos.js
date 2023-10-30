@@ -36,17 +36,18 @@ console.log(frase.endsWith("do"))//verifica si una cadena termina con los caract
 /******** METODOS EN ARRAY ******* */
 
 
-rs = met.split(" ")//Convierte en array a una cadena
 rs = meter.sort()//ordena una matriz alfabeticamente
 rs = meter.reverse()//Invierte elementos de una matriz y con sort puede invertirlo alfabeticamente
 rs = metero.sort((a,b)=> b-a)//ordena de forma invertida, todo depende del orden de a y b    a-b b-a
-rs = meter.push("palabra")//Sirve para añadir un array a lo ultimo
-rs = meter.unshift("palabra")//Funcion que puede estar al ultimo pero pone al principio en un array
-rs = meter.pop("palabra");//Elimina el ultimo elemento de un arreglo
-rs = meter.shift("palabra");//Elimina el primer elemento de un arreglo
+rs = meter.push("palabra")//Añade al ultimo del array
+rs = meter.unshift("palabra")//Añade al principio del array
+rs = meter.pop();//Elimina el ultimo de un array
+rs = meter.shift();//Elimina el primer de un array
 rs = meter.splice(1,1);//Elimina elemento de un arreglo depende del posicion que se ponga, es como pop y shift unidos
 
-
+rs = met.split(" ")//Convierte una cadena a un array
+rs = meter.join() //Convierte un array a cadena, por defecto son separados por "," pero se puede poner otras cosas
+console.log(rs)
 ////////////////////
 let er =""
 const ef = metero.map = ((a)=>{
@@ -109,8 +110,6 @@ let redu = carrito.reduce((total, producto)=> total + producto.precio,110) //Sum
 fil = carrito.filter(e => e.nombre !== "Audifonos")
 console.log(fil)
 
-
-delete producto.nombre;//palabra eliminar una propiedad de un objeto
 
 
 

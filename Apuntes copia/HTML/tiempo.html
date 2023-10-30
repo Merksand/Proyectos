@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                height: 100vh;
+                display: flex;
+                place-content: center;
+                place-items: center;
+                background: #f35;
+            }
+            fieldset {
+                width: 500px;
+                text-align: center;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-size: 30px;
+                font-weight: bolder;
+
+            }
+            .tiempo {
+                font-size: 80px;
+                font-weight: bolder;
+                color: #fff;
+            }
+        </style>
+        <fieldset>
+            <legend>
+                <p class="fecha"></p>
+            </legend>
+            <p class="tiempo"></p>
+        </fieldset>
+        <script>
+            let fecha = document.querySelector(".fecha")
+                let tiempo = document.querySelector(".tiempo")
+                let newTiempo = new Date()
+                let Meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+                let Semana = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"]
+                fecha.innerHTML = `${Semana[newTiempo.getDay()]}, ${newTiempo.getDay()} De ${Meses[newTiempo.getMonth()]} de ${newTiempo.getFullYear()}`
+
+                setInterval(() => {
+                    let newTiempo = new Date()
+                    if (newTiempo.getHours() < 10) {
+                        tiempo.innerHTML = 0 + newTiempo.toLocaleTimeString()
+                    }
+                    else {
+                        tiempo.innerHTML = newTiempo.toLocaleTimeString()
+                    }
+                }, 1000); w
+        </script>
+    </body>
+
+    </html>
