@@ -45,9 +45,9 @@ class Libro {
     }
 }
 
-// Ejemplo de uso
-const libro1 = new Libro('El Quijote', 'Miguel de Cervantes', 'Novela');
-libro1.mostrarInfo(); // Salida: Título: El Quijote, Autor: Miguel de Cervantes, Género: Novela
+
+const libroo1 = new Libro('El Quijote', 'Miguel de Cervantes', 'Novela');
+libroo1.mostrarInfo(); // Salida: Título: El Quijote, Autor: Miguel de Cervantes, Género: Novela
 
 
 
@@ -167,10 +167,7 @@ estudiante1.mostrarInfo(); // Salida: Nombre: Laura, Edad: 20, Asignaturas: Mate
 /* ----------------------------- */
 
 
-Ejercicio 1: Sistema de Gestión de Empleados
-
-javascript
-Copy code
+//Ejercicio 1: Sistema de Gestión de Empleados
 class Empleado {
     constructor(nombre, cargo) {
         this.nombre = nombre;
@@ -206,7 +203,6 @@ class SistemaEmpleados {
     }
 }
 
-// Ejemplo de uso
 const sistema = new SistemaEmpleados();
 const empleado1 = new Empleado("Juan", "Desarrollador");
 const empleado2 = new Empleado("Maria", "Diseñador");
@@ -216,10 +212,8 @@ sistema.mostrarEmpleados();
 sistema.eliminarEmpleado("Juan");
 sistema.actualizarCargo("Maria", "Gerente");
 sistema.mostrarEmpleados();
-Ejercicio 2: Juego de Preguntas y Respuestas
 
-javascript
-Copy code
+//Ejercicio 2: Juego de Preguntas y Respuestas
 class Pregunta {
     constructor(pregunta, respuesta) {
         this.pregunta = pregunta;
@@ -227,43 +221,38 @@ class Pregunta {
     }
 }
 
-class JuegoPreguntas {
-    constructor() {
-        this.listaPreguntas = [];
-    }
 
-    agregarPregunta(pregunta) {
-        this.listaPreguntas.push(pregunta);
-    }
+// class JuegoPreguntas {
+//     constructor() {
+//         this.listaPreguntas = [];
+//     }
 
-    hacerPreguntaAleatoria() {
-        const preguntaAleatoria = this.listaPreguntas[Math.floor(Math.random() * this.listaPreguntas.length)];
-        const respuestaUsuario = prompt(preguntaAleatoria.pregunta);
-        if (respuestaUsuario === preguntaAleatoria.respuesta) {
-            console.log("¡Respuesta correcta!");
-        } else {
-            console.log("Respuesta incorrecta. La respuesta correcta es:", preguntaAleatoria.respuesta);
-        }
-    }
-}
+//     agregarPregunta(pregunta) {
+//         this.listaPreguntas.push(pregunta);
+//     }
 
-// Ejemplo de uso
-const juego = new JuegoPreguntas();
-const pregunta1 = new Pregunta("¿Cuál es la capital de Francia?", "París");
-const pregunta2 = new Pregunta("¿Cuál es el color del cielo?", "Azul");
-juego.agregarPregunta(pregunta1);
-juego.agregarPregunta(pregunta2);
-juego.hacerPreguntaAleatoria();
-Estos son solo ejemplos básicos para darte una idea de cómo empezar.Puedes expandir y mejorar estos códigos según tus necesidades y requerimientos específicos.Si necesitas ayuda con alguno de los otros ejercicios, no dudes en preguntar.
+//     hacerPreguntaAleatoria() {
+//         const preguntaAleatoria = this.listaPreguntas[Math.floor(Math.random() * this.listaPreguntas.length)];
+//         const respuestaUsuario = prompt(preguntaAleatoria.pregunta);
+//         if (respuestaUsuario === preguntaAleatoria.respuesta) {
+//             console.log("¡Respuesta correcta!");
+//         } else {
+//             console.log("Respuesta incorrecta. La respuesta correcta es:", preguntaAleatoria.respuesta);
+//         }
+//     }
+// }
 
+// const juego = new JuegoPreguntas();
+// const pregunta1 = new Pregunta("¿Cuál es la capital de Francia?", "París");
+// const pregunta2 = new Pregunta("¿Cuál es el color del cielo?", "Azul");
+// juego.agregarPregunta(pregunta1);
+// juego.agregarPregunta(pregunta2);
+// juego.hacerPreguntaAleatoria();
 
 
 
+//Ejercicio 3: Calculadora
 
-Ejercicio 3: Calculadora
-
-javascript
-Copy code
 class Calculadora {
     sumar(a, b) {
         return a + b;
@@ -294,10 +283,7 @@ console.log(calculadora.multiplicar(4, 6)); // Output: 24
 console.log(calculadora.dividir(10, 2)); // Output: 5
 console.log(calculadora.dividir(10, 0)); // Output: "Error: No se puede dividir por cero."
 
-Ejercicio 4: Lista de Tareas //NO HAY
-
-javascript
-Copy code
+//Ejercicio 4: Lista de Tareas //NO HAY
 class Tarea {
     constructor(descripcion, completada = false) {
         this.descripcion = descripcion;
@@ -325,7 +311,7 @@ class ListaTareas {
     }
 }
 
-// Ejemplo de uso
+
 const listaTareas = new ListaTareas();
 const tarea1 = new Tarea("Hacer compras");
 const tarea2 = new Tarea("Estudiar JavaScript");
@@ -334,84 +320,7 @@ listaTareas.agregarTarea(tarea2);
 listaTareas.mostrarTareas();
 tarea1.marcarComoCompletada();
 listaTareas.mostrarTareas();
-Espero que estos ejercicios sean útiles. ¡Si necesitas más, no dudes en pedirlos!
 
 
 
-rrespondientes:
 
-Ejercicio 5: Libro y Biblioteca
-
-javascript
-Copy code
-class Libro {
-    constructor(titulo, autor, genero) {
-        this.titulo = titulo;
-        this.autor = autor;
-        this.genero = genero;
-    }
-
-    obtenerInfo() {
-        return `Título: ${this.titulo}, Autor: ${this.autor}, Género: ${this.genero}`;
-    }
-}
-
-class Biblioteca {
-    constructor() {
-        this.libros = [];
-    }
-
-    agregarLibro(libro) {
-        this.libros.push(libro);
-    }
-
-    listarLibros() {
-        this.libros.forEach((libro, index) => {
-            console.log(`${index + 1}. ${libro.obtenerInfo()}`);
-        });
-    }
-}
-
-// Ejemplo de uso
-const biblioteca = new Biblioteca();
-const libro1 = new Libro("El Principito", "Antoine de Saint-Exupéry", "Infantil");
-const libro2 = new Libro("Cien años de soledad", "Gabriel García Márquez", "Realismo mágico");
-biblioteca.agregarLibro(libro1);
-biblioteca.agregarLibro(libro2);
-biblioteca.listarLibros();
-
-Ejercicio 6: Cuenta Bancaria //NO HAY
-
-javascript
-Copy code
-class CuentaBancaria {
-    constructor(titular, saldo = 0) {
-        this.titular = titular;
-        this.saldo = saldo;
-    }
-
-    depositar(monto) {
-        this.saldo += monto;
-    }
-
-    retirar(monto) {
-        if (monto <= this.saldo) {
-            this.saldo -= monto;
-        } else {
-            console.log("Saldo insuficiente.");
-        }
-    }
-
-    consultarSaldo() {
-        return this.saldo;
-    }
-}
-
-// Ejemplo de uso
-const cuenta = new CuentaBancaria("Juan Pérez", 1000);
-console.log(cuenta.consultarSaldo()); // Output: 1000
-cuenta.depositar(500);
-console.log(cuenta.consultarSaldo()); // Output: 1500
-cuenta.retirar(700);
-console.log(cuenta.consultarSaldo()); // Output: 800
-cuenta.retirar(1000); // Output: Saldo insuficiente.

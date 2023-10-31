@@ -63,6 +63,10 @@ class Coche{
 const coche1 = new Coche("Toyota","4x4",2007)
 console.log(coche1.detalles());
 
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+
 
 
 class CuentaBancaria{
@@ -93,6 +97,10 @@ cuenta1.retirar(1050)
 console.log(cuenta1.saldoInicial);
 
 
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+
 
 
 
@@ -109,6 +117,10 @@ class Estudiante{
 }
 const estudiante1 = new Estudiante("Miguel",20,["Base de Datos","Redes", "Programacion","Estadistica"])
 console.log(estudiante1.mostrarInfo());
+
+
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
 
 
 
@@ -133,7 +145,11 @@ class SistemaEmpleados{
     }
 
     actualizarEmpleado(nombre,nuevoCargo){
-
+        this.listaEmpleados.forEach(empleado => {
+            if(empleado.nombre == nombre){
+                empleado.cargo = nuevoCargo
+            }
+        });
     }
     mostrarEmpleados(){
         this.listaEmpleados.forEach(e => {
@@ -145,14 +161,152 @@ const sistema = new SistemaEmpleados()
 const empleado1 = new Empleado("Pedro","Diseñador grafico")
 const empleado2 = new Empleado("Maria", "Diseñador");
 const empleado3 = new Empleado("Luis","Desarrollador")
-console.log(sistema.agregarEmpleado(empleado1));
-console.log(sistema.agregarEmpleado(empleado2));
-console.log(sistema.agregarEmpleado(empleado3));
+sistema.agregarEmpleado(empleado1)
+sistema.agregarEmpleado(empleado2)
+sistema.agregarEmpleado(empleado3)
 sistema.eliminarEmpleado("Pedro")
-console.log(sistema.mostrarEmpleados());
+sistema.actualizarEmpleado("Luis","Gerente general")
+sistema.actualizarEmpleado("Maria","Despedida")
+sistema.mostrarEmpleados()
 // console.log(sistema);
 
 
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+
+class Calculadora{
+    sumar(a,b){
+        return a+b
+    }
+    restar(a,b){
+        return a-b
+    }
+    multiplicar(a, b) {
+        return a * b
+    }
+    dividir(a, b) {
+    return b = !(b <= 0) ? a / b: "Error: Ingrese un numero mayor a 0"
+    }
+    potencia(a,b){
+        return Math.pow(a,b)
+    }
+    raizCuadrada(a){
+        return Math.sqrt(a)
+    }
+    logaritmo(a){
+        return Math.log10(a)
+    }
+}
+
+const calculadora = new Calculadora()
+console.log(calculadora.sumar(3,4));
+console.log(calculadora.dividir(5,2));
+console.log(calculadora.potencia(3,3));
+console.log(calculadora.raizCuadrada(5));
+console.log(calculadora.logaritmo(12));
+
+
+
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+
+class Tarea{
+    constructor(descripcion, completada = false) {
+        this.descripcion = descripcion
+        this.completada = completada
+    }
+
+    marcarCompletada(){
+        this.completada = true
+    }
+}
+
+class ListaTareas{
+    constructor() {
+        this.lista = []
+    }
+
+    agregarTarea(tarea){
+        this.lista.push(tarea)
+    }
+    mostrarLista(){
+        this.lista.forEach((tarea, index) => {
+            console.log(`${index + 1}: ${tarea.descripcion}`);
+        });
+    }
+}
+const listaTareas = new ListaTareas()
+const tarea1  = new Tarea("Estudiar para la evaluacion")
+const tarea2  = new Tarea("Hacer tarea base de datos")
+const tarea3  = new Tarea("Iniciar proyecto")
+const tarea4  = new Tarea("Conseguir complementos")
+listaTareas.agregarTarea(tarea1)
+listaTareas.agregarTarea(tarea2)
+listaTareas.agregarTarea(tarea3)
+listaTareas.agregarTarea(tarea4)
+listaTareas.mostrarLista()
+
+
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+
+
+class NewProducto{
+    static id = 1
+    static productosConteo = 0
+    constructor(nombre,precio,stock,id ) {
+        this.nombre = nombre
+        this.precio = precio
+        this.stock = stock
+        this.id = NewProducto.id++
+        NewProducto.productosConteo++
+    }
+}
+class Carrito{
+    constructor() {
+        this.listaProductos = []
+        this.costoTotal = 0
+    }
+    agregarProducto(producto, stock = 1){
+        for (let i = 0; i < stock; i++) {
+            this.listaProductos.push(producto)            
+        }
+    }
+    calcularTotal(){
+        return this.listaProductos.reduce((total,producto)=> total + producto.precio,0)
+    }
+    realizarCompra(){
+        this.listaProductos.forEach(e => {
+            e.stock--
+        });
+        return `Gracias por la compra`
+    }
+}
+
+
+const carrito1 = new Carrito()
+const product0 = new NewProducto("Polera",60,20,Producto.id)
+const product1 = new NewProducto("Pantalon",120,30)
+const product2 = new NewProducto("Gorra",40,50)
+// carrito1.agregarProducto(product1)
+// carrito1.agregarProducto(product2)
+// carrito1.agregarProducto(product3)
+// for (let i = 0; i < NewProducto.productosConteo; i++) {
+//     carrito1.agregarProducto("product"+i)
+//     console.log(i);
+    
+// }
+console.log(carrito1.calcularTotal());
+
+console.log(carrito1.realizarCompra("Tomate"));
+
+console.log(carrito1.listaProductos);
+console.log(NewProducto.id);
 
 
 
@@ -167,14 +321,6 @@ console.log(sistema.mostrarEmpleados());
 
 
 
-let num = ["Miguel","Maria","Luis","Samuel","Tito"]
-var empleado = "Maria"
-let empleado22 = "Tito"
 
-// num = num.filter(e => e != empleado)
-// num = num.filter(e => e != empleado22)
-num.pop()
-// num.push("Lelo")
-// num.unshift("Mario")
-num.shift()  
-console.log(num);
+
+
