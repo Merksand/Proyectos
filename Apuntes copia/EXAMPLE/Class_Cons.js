@@ -317,10 +317,3 @@ console.log(NewProducto.id);
 
 
 
-
-
-
-
-
-
-

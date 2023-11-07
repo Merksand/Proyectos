@@ -6,24 +6,14 @@
     <title>Document</title>
 </head>
 <body>
-
-    <input type="text" class="texto">
-    <button class="boton">Añadir</button>
-    <button class="borrar" onclick="delet()">Borrar</button>
-    <button class="a">Click</button>
-
-
-    <SCRipt>
-        let borrar = document.querySelector(".borrar")
-        function delet(){
-            let texto = document.querySelector(".texto")
-            let bo = texto.value.slice(0,-1)
-            texto.value = bo
-
+    <style>
+        body{
+            background: #0007;
         }
-    </SCRipt>
-
-    <script src="modulos.js"></script> 
+    </style>
+    <div class="salida"></div>
+    <script src="modulos.js">
+    </script> 
 
 
 

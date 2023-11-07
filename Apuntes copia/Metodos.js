@@ -147,3 +147,25 @@ console.log(nomb.findIndex(e => e.length > 6));
 let nuevo = [...numbers]
 console.log(nuevo.sort());
 console.log(numbers.sort((a, b) => b - a));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function delet() {
+     let texto = document.querySelector(".texto")
+     let bo = texto.value.slice(0, -1)
+     texto.value = bo
+
+}

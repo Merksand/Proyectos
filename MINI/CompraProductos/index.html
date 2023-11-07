@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .alerta {
+            color: none;
+            font-weight: none;
+        }
+    </style>
+    <h1>Tienda de vestir</h1>
+    <div>Productos disponibles:<p class="disponibles" style="color:green; font-weight: bolder;"> </p>
+    </div>
+    <div>
+        <p>Ingrese nombre del Producto: <input type="text" name="" id="producto"></p>
+        <p>Ingrese la cantidad: <input type="text" id="cantidadProducto"></p>
+        <button id="botonCalcular">Calcular</button>
+        <button id="botonReset">Reset</button>
+        <button id="confirmarCompra">Compra realizada</button>
+        <p>Precio Total:
+            <span id="precioTotal"></span>
+            <span id="alerta"></span>
+            <span id="textoCompra"></span>
+        </p>
+        <form id="nuevoProductoForm">
+            <label for="nombre">Nombre del Producto:</label>
+            <input type="text" id="nombre" required><br>
+
+            <label for="precio">Precio:</label>
+            <input type="number" id="precio" required><br>
+
+            <label for="stock">Stock:</label>
+            <input type="number" id="stock" required><br>
+
+            <button type="submit">Agregar Producto</button>
+        </form>
+    </div>
+    <script>
+        let disponibles = document.querySelector(".disponibles")
+        let producto = document.getElementById("producto")
+        let cantidadProducto = document.getElementById("cantidadProducto")
+        let precioTotal = document.getElementById("precioTotal")
+        let botonCalcular = document.getElementById("botonCalcular")
+        let botonCompra = document.getElementById("confirmarCompra")
+        let textoCompra = document.getElementById("textoCompra")
+        let botonReset = document.getElementById("botonReset")
+        let alertaStock = document.getElementById("alerta")
+        let validarCompra = true
+        class Producto {
+            static productosConteo = 0
+            static id = 0
+            constructor(nombre, precio, stock, id) {
+                this.nombre = nombre
+                this.precio = precio
+                this.stock = stock
+                Producto.productosConteo++
+                this.id = Producto.id++
+            }
+        }
+        class Carrito {
+            constructor() {
+                this.listaProductos = []
+                this.costoTotal = 0
+            }
+            agregarProducto(producto, stock = 1) {
+                for (let i = 0; i < stock; i++) {
+                
+                    this.listaProductos.push(producto)
+                }
+            }
+            calcularTotal() {
+                return this.listaProductos.reduce((total, producto) => total + producto.precio, 0)
+            }
+            realizarCompra() {
+                this.listaProductos.forEach(e => {
+                    e.stock--
+                    console.log(e);
+                });
+                return `Gracias por la compra`
+            }
+        }
+        const carrito1 = new Carrito()
+        let productos = [
+            new Producto("Reloj", 200, 30, Producto.id),
+            new Producto("Polera", 60, 20, Producto.id),
+            new Producto("Pantalon", 120, 30, Producto.id),
+            new Producto("Gorra", 40, 50, Producto.id),
+            new Producto("Gafas", 20, 20, Producto.id)]
+        for (let i = 0; i < Producto.productosConteo; i++) {
+            disponibles.innerHTML += "<span>" + productos[i].nombre + " " + "</span>"
+        }
+        disponibles.addEventListener("click", (e) => {
+            if (e.target.tagName == "SPAN") {
+                producto.value = (e.target.innerHTML).trim()
+                precioTotal.innerHTML = ""
+                cantidadProducto.value = ""
+                textoCompra.innerHTML = ""
+            }
+        })
+        botonCalcular.addEventListener("click", () => {
+            for (let i = 0; i < Producto.productosConteo; i++) {
+                if ((producto.value == productos[i].nombre) && (productos[i].stock > 0 && cantidadProducto.value > productos[i].stock)) {
+                    textoCompra.innerHTML=""
+                    alertaStock.innerHTML = "No hay suficiente cantidad"
+                    alertaStock.style.color = "red"
+                    alertaStock.style.fontWeight = "bolder"
+                    return
+                }
+                else {
+                    if (producto.value == productos[i].nombre && productos[i].stock > 0) {
+                        carrito1.agregarProducto(productos[i], cantidadProducto.value)
+                        alertaStock.innerHTML = ""
+                        precioTotal.innerHTML = carrito1.calcularTotal()
+                        validarCompra = true
+                        textoCompra.innerHTML = ""
+                        return
+                    }
+                    else {
+                        textoCompra.innerHTML=""
+                        precioTotal.innerHTML=""
+                        alertaStock.innerHTML = "Producto Agotado"
+                        alertaStock.style.color = "red"
+                        alertaStock.style.fontWeight = "bolder"
+                    }
+                }
+            }
+
+        })
+        botonReset.addEventListener("click", () => {
+            producto.value = ""
+            cantidadProducto.value = ""
+            precioTotal.innerHTML = ""
+            textoCompra.innerHTML = ""
+            carrito1.listaProductos = []
+            console.log(carrito1.listaProductos);
+        })
+        let x = 0
+        botonCompra.addEventListener("click", () => {
+            if (validarCompra) {
+                x++
+                textoCompra.innerHTML = carrito1.realizarCompra()
+                // console.log(productos);
+                console.log(carrito1.listaProductos);
+                localStorage.setItem("Productos", JSON.stringify(productos))
+                console.log("Compra lista", x);
+                carrito1.listaProductos = []
+                validarCompra = false
+            }
+        })
+
+        document.getElementById('nuevoProductoForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            let nombre = document.getElementById('nombre').value;
+            let precio = parseFloat(document.getElementById('precio').value);
+            let stock = parseInt(document.getElementById('stock').value);
+            const nuevoProducto = new Producto(nombre, precio, stock, Producto.id);
+            productos.push(nuevoProducto);
+            localStorage.setItem("Productos", JSON.stringify(productos))
+            console.log(productos);
+            this.reset()
+            actualizarProductosDisponibles();
+        });
+        function actualizarProductosDisponibles() {
+
+            disponibles.innerHTML = '';
+            for (let i = 0; i < productos.length; i++) {
+                disponibles.innerHTML += "<span>" + productos[i].nombre + " " + "</span>"
+            }
+        }
+        document.addEventListener("DOMContentLoaded", () => {
+            let productosGuardados = JSON.parse(localStorage.getItem("Productos"))
+            if (productosGuardados) {
+                disponibles.innerHTML = '';
+                Producto.productosConteo = productosGuardados.length
+
+                productos = productosGuardados
+                for (let i = 0; i < productosGuardados.length; i++) {
+                    disponibles.innerHTML += "<span>" + productosGuardados[i].nombre + " " + "</span>"
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
